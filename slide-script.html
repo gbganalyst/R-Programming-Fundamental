@@ -1,0 +1,4905 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>slide-script.knit</title>
+    <meta charset="utf-8" />
+    <script src="libs/header-attrs/header-attrs.js"></script>
+    <link href="libs/tile-view/tile-view.css" rel="stylesheet" />
+    <script src="libs/tile-view/tile-view.js"></script>
+    <link href="libs/animate.css/animate.xaringan.css" rel="stylesheet" />
+    <link href="libs/tachyons/tachyons.min.css" rel="stylesheet" />
+    <script src="libs/xaringanExtra_fit-screen/fit-screen.js"></script>
+    <link href="libs/panelset/panelset.css" rel="stylesheet" />
+    <script src="libs/panelset/panelset.js"></script>
+    <script type="application/json" id="xaringanExtra-editable-docid">{"id":"e048a0fefb084c8c9149664730dec578","expires":14}</script>
+    <script src="libs/himalaya/himalaya.js"></script>
+    <script src="libs/js-cookie/js.cookie.js"></script>
+    <link href="libs/editable/editable.css" rel="stylesheet" />
+    <script src="libs/editable/editable.js"></script>
+    <script src="libs/clipboard/clipboard.min.js"></script>
+    <link href="libs/xaringanExtra-clipboard/xaringanExtra-clipboard.css" rel="stylesheet" />
+    <script src="libs/xaringanExtra-clipboard/xaringanExtra-clipboard.js"></script>
+    <script>window.xaringanExtraClipboard(null, {"button":"Copy Code","success":"Copied!","error":"Press Ctrl+C to Copy"})</script>
+    <link href="libs/shareon/shareon.min.css" rel="stylesheet" />
+    <script src="libs/shareon/shareon.min.js"></script>
+    <link href="libs/xaringanExtra-shareagain/shareagain.css" rel="stylesheet" />
+    <script src="libs/xaringanExtra-shareagain/shareagain.js"></script>
+    <script src="libs/peerjs/peerjs.min.js"></script>
+    <script src="libs/tiny.toast/toast.min.js"></script>
+    <link href="libs/xaringanExtra-broadcast/broadcast.css" rel="stylesheet" />
+    <script src="libs/xaringanExtra-broadcast/broadcast.js"></script>
+    <script src="libs/mark.js/mark.min.js"></script>
+    <link href="libs/xaringanExtra-search/search.css" rel="stylesheet" />
+    <script src="libs/xaringanExtra-search/search.js"></script>
+    <script>window.addEventListener('load', function() { window.xeSearch = new RemarkSearch({"position":"bottom-left","caseSensitive":false,"showIcon":false,"autoSearch":true}) })</script>
+    <script src="libs/fabric/fabric.min.js"></script>
+    <link href="libs/xaringanExtra-scribble/scribble.css" rel="stylesheet" />
+    <script src="libs/xaringanExtra-scribble/scribble.js"></script>
+    <script>document.addEventListener('DOMContentLoaded', function() { window.xeScribble = new Scribble({"pen_color":["#FF0000"],"pen_size":3,"eraser_size":30,"palette":[]}) })</script>
+    <script src="libs/freezeframe/freezeframe.min.js"></script>
+    <script src="libs/xaringanExtra-freezeframe/freezeframe-init.js"></script>
+    <script id="xaringanExtra-freezeframe-options" type="application/json">{"selector":"img[src$=\"gif\"]","trigger":"click","overlay":false,"responsive":true,"warnings":true}</script>
+    <script src="libs/xaringanExtra-webcam/webcam.js"></script>
+    <script id="xaringanExtra-webcam-options" type="application/json">{"width":"150","height":"150","margin":"1em"}</script>
+    <link href="libs/xaringanExtra-extra-styles/xaringanExtra-extra-styles.css" rel="stylesheet" />
+    <link href="libs/countdown/countdown.css" rel="stylesheet" />
+    <script src="libs/countdown/countdown.js"></script>
+    <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+
+
+
+
+
+
+
+background-image: url(images/gbg.jpg), url(images/R_logo.png)
+background-position: 0% 100%, 100% 0%
+background-size: 40%, 10%
+
+class: title-page, center, middle
+
+## R Programming Fundamentals
+
+<div>
+<style type="text/css">.xaringan-extra-logo {
+width: 110px;
+height: 128px;
+z-index: 0;
+background-image: url(images/gbg.jpg);
+background-size: contain;
+background-repeat: no-repeat;
+position: absolute;
+top:1em;right:1em;
+}
+</style>
+<script>(function () {
+  let tries = 0
+  function addLogo () {
+    if (typeof slideshow === 'undefined') {
+      tries += 1
+      if (tries < 10) {
+        setTimeout(addLogo, 100)
+      }
+    } else {
+      document.querySelectorAll('.remark-slide-content:not(.title-page):not(.inverse):not(.hide_logo)')
+        .forEach(function (slide) {
+          const logo = document.createElement('a')
+          logo.classList = 'xaringan-extra-logo'
+          logo.href = 'https://bit.ly/gbganalyst'
+          slide.appendChild(logo)
+        })
+    }
+  }
+  document.addEventListener('DOMContentLoaded', addLogo)
+})()</script>
+</div>
+
+---
+class: about-me-slide, inverse, middle, center
+
+## About the trainer
+
+&lt;img style="border-radius: 80%;" src="images/passport_new.jpg" width="180px"/&gt;
+
+### Ezekiel Adebayo Ogundepo
+
+#### Data Scientist, Statistician
+
+.fade[Virus Outbreak Data Network (VODAN Africa &amp; Asia)&lt;br&gt; Nigeria Chapter]
+
+
+[&lt;svg viewBox="0 0 512 512" style="height:1em;position:relative;display:inline-block;top:.1em;" xmlns="http://www.w3.org/2000/svg"&gt;  &lt;path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"&gt;&lt;/path&gt;&lt;/svg&gt; https://bit.ly/gbganalyst](https://bit.ly/gbganalyst)
+[&lt;svg viewBox="0 0 512 512" style="height:1em;position:relative;display:inline-block;top:.1em;" xmlns="http://www.w3.org/2000/svg"&gt;  &lt;path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"&gt;&lt;/path&gt;&lt;/svg&gt; @gbganalyst](https://twitter.com/gbganalyst)
+[&lt;svg viewBox="0 0 496 512" style="position:relative;display:inline-block;top:.1em;height:1em;" xmlns="http://www.w3.org/2000/svg"&gt;  &lt;path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"&gt;&lt;/path&gt;&lt;/svg&gt; @gbganalyst](https://github.com/gbganalyst)
+
+???
+
+class: about-me-slide, inverse, middle, center
+
+## About the trainer
+
+&lt;img style="border-radius: 80%;" src="images/abono.jpg" width="180px"/&gt;
+
+### Olanrewaju Ahmed Babajide
+
+#### Principal System Analyst, Data Scientist
+
+.fade[University of Ibadan&lt;br&gt;Oyo, Nigeria]
+
+[&lt;svg viewBox="0 0 512 512" style="height:1em;position:relative;display:inline-block;top:.1em;" xmlns="http://www.w3.org/2000/svg"&gt;  &lt;path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"&gt;&lt;/path&gt;&lt;/svg&gt; https://ui.edu.ng/ABOlanrewaju](https://ui.edu.ng/ABOlanrewaju)
+[&lt;svg viewBox="0 0 512 512" style="height:1em;position:relative;display:inline-block;top:.1em;" xmlns="http://www.w3.org/2000/svg"&gt;  &lt;path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"&gt;&lt;/path&gt;&lt;/svg&gt; @abono2000](https://twitter.com/abono2000)
+[&lt;svg viewBox="0 0 496 512" style="position:relative;display:inline-block;top:.1em;height:1em;" xmlns="http://www.w3.org/2000/svg"&gt;  &lt;path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"&gt;&lt;/path&gt;&lt;/svg&gt; @abono2000](https://github.com/abono2000)
+
+???
+
+class: about-me-slide, inverse, middle, center
+
+## About the trainer
+
+&lt;img style="border-radius: 80%;" src="images/prof_kay.jpeg" width="180px"/&gt;
+
+### Ogunyemi Olakunle Joshua
+
+#### Data Scientist
+
+.fade[TAG NG&lt;br&gt;Lagos, Nigeria]
+
+[&lt;svg viewBox="0 0 512 512" style="height:1em;position:relative;display:inline-block;top:.1em;" xmlns="http://www.w3.org/2000/svg"&gt;  &lt;path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"&gt;&lt;/path&gt;&lt;/svg&gt; @olakunle4impact](https://twitter.com/olakunle4impact)
+
+
+---
+class: middle
+
+.w-100.lh-copy[
+
+Goal:
+
+&gt; The goal of this R workshop is to help you learn the most important skills in R for data science.
+
+
+]
+
+
+---
+background-image: url(images/relax.jpg)
+background-size: cover
+background-position: 50% 50%
+class: center, top, hide_logo
+
+## Relax, programming in R is cool!
+
+
+---
+class: inverse, middle
+name: toc
+
+# Table of content
+
+.w-100.lh-copy[
+
+- [History and Overview of R](#hist)
+
+- [R for Data Science](#r4ds)
+
+- [R as a Calculator](#cal)
+
+- [Atomic Data Type and Variable Assignment in R](#var)
+
+- [Basic Data Structure in R](#basic)
+
+- [Write your own function in R](#function)
+]
+
+---
+
+background-image: url(images/lekan.jpeg)
+background-size: cover
+background-position: 50% 50%
+class: bottom, center, inverse
+
+## Let's get started!
+
+
+
+---
+class: middle, center, inverse
+name: hist
+
+# History and Overview of R
+
+---
+class: middle
+
+# History of R
+
+.w-100.lh-copy[
+R is a programming language and free software environment for statistical
+computations, data cleaning, data analysis, and graphical representation of data. The R language is widely used among statisticians and data miners
+for developing statistical software and data analysis.
+]
+
+--
+
+.w-100.lh-copy[
+In the year `2020`, the R community celebrated the 20th year of R version `1.0.0`. The current version of R programming is `4.1.0` with the nickname *Camp Pontanezen*. 
+]
+
+--
+
+.w-100.lh-copy[
+
+R has released so many versions and you can see their list by using:
+
+
+```r
+rversions::r_versions()
+```
+]
+
+--
+Please note that you will need to install `rversions` package before `rversions::r_versions()` can work.
+
+---
+## Why R programming?
+
+&lt;img src="images/learnr.png" width="1547" height="100%" /&gt;
+
+---
+background-image:url(images/R.PNG)
+background-size: contain
+class: center, bottom
+
+### R programming interface
+
+
+---
+class: middle
+
+# RStudio
+
+.w-100.lh-copy[
+RStudio is an integrated development environment (IDE) for R programming. RStudio makes programming easier and friendly in R.
+]
+
+---
+
+# RStudio
+
+The current version of RStudio is `1.4.1717`
+
+&lt;img src="images/R_studio.PNG" width="664" height="100%" /&gt;
+
+
+---
+
+### Installing R and RStudio
+
+
+.panelset[
+
+.panel[.panel-name[Install R]
+
+
+You can install R on any operating system (OS).
+
+**For Windows** :
+
+- Download R for Windows OS from this [link](https://cran.r-project.org/bin/windows/base/)
+
+- Open the `.exe` file and install it.
+
+**For Mac** :
+
+Download R for Mac via this [link](https://cran.r-project.org/bin/macosx/). Please make sure you click on the first `.pkg` link,
+
+- Open the `.pkg` file and install it.
+
+**For Linux**:
+For complete R System installation in Linux, follow the instructions on this
+[link](https://cran.r-project.org/).
+
+For Ubuntu with Apt-get installed, execute `sudo apt-get install r-base` in the terminal.
+
+]
+
+.panel[.panel-name[Install RStudio]
+
+.w-100.lh-copy[
+You can install **RStudio** via this [link](https://cran.r-project.org/), choose the appropriate installer file for your operating system, download it, and then run it to install **RStudio**.
+]
+]
+]
+
+---
+# LearnR, UseR, and ThinkR
+
+&lt;img src="images/Company_useR.png" width="100%" height="100%" /&gt;
+
+[Companies](https://www.quora.com/Which-companies-use-R) that use R for Analytics
+
+
+
+---
+
+class: center, middle, inverse
+name: r4ds
+
+# R for Data Science
+
+
+---
+# What is data science?
+
+.w-100.lh-copy[
+Data science is an exciting discipline that allows you to turn raw data into understanding, insight, and knowledge &lt;sup&gt;1&lt;/sup&gt;. ]
+
+--
+
+&lt;div class="figure"&gt;
+&lt;img src="images/r4ds.JPG" alt="Data Science Phases~Inspired by Hadley" width="100%" /&gt;
+&lt;p class="caption"&gt;Data Science Phases~Inspired by Hadley&lt;/p&gt;
+&lt;/div&gt;
+
+--
+
+.footnote[
+[1] R for data science, https://r4ds.had.co.nz
+]
+
+---
+class: middle
+
+# R learning R Materials
+	
+You can learn R through the following useful selected materials:
+
+--
+
+- [YaRrr! The Pirate’s Guide to R](https://bookdown.org/ndphillips/YaRrr/)
+
+--
+
+- [R for Data Science](https://r4ds.had.co.nz)
+
+--
+
+- [R for Data Science: Exercise Solutions](https://jrnold.github.io/r4ds-exercise-solutions/)
+
+--
+
+- [Big Book of R](https://www.bigbookofr.com/)
+
+--
+
+- [Posts you might have missed!](https://postsyoumighthavemissed.com/search/)
+
+---
+class: middle
+
+# Introduction to R
+.w-100.lh-copy[
+In this section, you will take your first steps with R. You will learn how 
+to navigate through the four windows in Rstudio, use R as a calculator and  assign values to variables. You will also get to know the basic data types in R. 
+]
+
+--
+
+![](https://media3.giphy.com/media/26h0poAzDM5h8gHWE/giphy.gif)  
+
+---
+## The four panes of RStudio
+
+&lt;img src="images/RStudio.png" width="1033" /&gt;
+--
+
+**Let's open our RStudio!**
+---
+
+class: center, middle, inverse
+name: cal
+
+# R as a calculator
+
+&lt;img src="images/calculator.png" width="60%" height="55%" /&gt;
+
+---
+
+# R as a calculator
+
+.w-100.lh-copy[
+In its most basic form, R can be used as a simple calculator. Consider the
+following arithmetic operations:
+]
+
+--
+
+- Addition (`+`)
+
+- Subtraction (`-`)
+
+- Multiplication (`*`)
+
+- Division (`/`)
+
+- Exponentiation (`^`)
+
+- Modulo (`%%`)
+
+- Parenthesis `()`
+
+---
+
+.pull-left[
+
+### Addition and Subtraction
+
+
+```r
+6 + 12 - 8
+```
+
+```
+[1] 10
+```
+
+
+```r
+56 - 14 + 100
+```
+
+```
+[1] 142
+```
+
+
+```r
+1 + 3 + 2
+```
+
+```
+[1] 6
+```
+
+
+```r
+7 + 15 - 10 + 18 - 6 + 11 - 14
+```
+
+```
+[1] 21
+```
+
+
+```r
+2 + 3 + 6
+```
+
+```
+[1] 11
+```
+
+
+]
+
+--
+.pull-right[
+
+### Multiplication and Division
+
+
+```r
+2 * 3
+```
+
+```
+[1] 6
+```
+
+
+```r
+100 / 50
+```
+
+```
+[1] 2
+```
+
+
+```r
+3 * 5 / 3
+```
+
+```
+[1] 5
+```
+
+
+```r
+-2 * 4
+```
+
+```
+[1] -8
+```
+
+
+```r
+8 * -5
+```
+
+```
+[1] -40
+```
+
+]
+
+
+---
+
+## Exponentiation
+
+
+```r
+3^2
+```
+
+```
+[1] 9
+```
+
+```r
+2 * 2^3
+```
+
+```
+[1] 16
+```
+
+```r
+2^3 - 9
+```
+
+```
+[1] -1
+```
+
+```r
+2 - 2^3
+```
+
+```
+[1] -6
+```
+
+```r
+3^2 - 1 * 4 + 2
+```
+
+```
+[1] 7
+```
+
+
+---
+
+## Modulus
+
+.w-100.lh-copy[
+The modulo (or “modulus” or “mod”) is the remainder after dividing one number by another. For example, `9 mod 2 = 1`. Because `9/2 = 4` with a remainder of 1. In mathematics, we write that as `9 mod 2 = 1` and in R we write it as `9 %% 2 = 1`
+]
+
+
+```r
+9 %% 2
+```
+
+```
+[1] 1
+```
+
+
+```r
+11 %% 3
+```
+
+```
+[1] 2
+```
+
+
+```r
+11 %% 3 - 4
+```
+
+```
+[1] -2
+```
+
+
+```r
+16 %% 3
+```
+
+```
+[1] 1
+```
+
+---
+
+# Parenthesis or brackets
+
+.w-100.lh-copy[
+Parentheses are used to denote grouping of operation in mathematics. It denotes modifications to normal order of operations. Remember **BODMAS** in mathematics? We shall use BEDMAS in programming:
+]
+
+--
+
+- B - Bracket
+
+- E - Exponentiation
+
+- D - Division
+
+- M - Multiplication
+
+- A - Addition
+
+- S - Subtraction
+
+--
+
+.w-100.lh-copy[
+In an expression like `\(3 \times (2+3)\)`, the part of the expression within the parentheses, `\((2 + 3) = 5\)`, is evaluated first, and then this result is used in the rest of the expression i.e. `\(3 \times 5 = 15\)`.
+]
+
+---
+
+## Examples 
+
+
+`\(3 \times (2 + 3)\)`
+
+```r
+3 * (2 + 3)
+```
+
+```
+[1] 15
+```
+
+`\((3+2) \times (6-4)\)`
+
+
+```r
+(3 + 2) * (6 - 4)
+```
+
+```
+[1] 10
+```
+
+`\(6-(5\times1)+2^3\)`
+
+
+```r
+6 - (5 * 1) + 2^3
+```
+
+```
+[1] 9
+```
+---
+
+# Operations involving square root
+
+Use R to evaluate `\(\sqrt{125}\)` 
+
+
+```r
+sqrt(125)
+```
+
+```
+[1] 11.18034
+```
+
+Use R to evaluate `\(\dfrac{19}{\sqrt{19}}\)`
+
+
+```r
+19 / sqrt(19)
+```
+
+```
+[1] 4.358899
+```
+
+Evaluate `\(\dfrac{2\sqrt{3}}{3\sqrt{10}}\)`
+
+
+```r
+(2 * sqrt(3)) / (3 * sqrt(10))
+```
+
+```
+[1] 0.3651484
+```
+
+---
+
+### Comment in R
+
+R makes use of the **#** sign to add comments. Adding comment to your code is a common practice in all programming languages. This is important because:
+
+1.	It makes you remember a line of code you have written after leaving it for a while.
+
+2.	It makes others who want to check your code to understand it line by line.
+
+3.	It is good for documentation purpose.
+
+--
+
+Comments are not run as R code, so they will not influence your result and R ignores any anything that has **#** sign.
+
+--
+
+**Examples**
+
+
+```r
+# We use * for multiplication in R
+
+2 * 8
+```
+
+```
+[1] 16
+```
+
+--
+
+It is important to put a space after the **#** for easy readability.
+
+
+```r
+*3 + 6 # a space after
+```
+
+```
+[1] 9
+```
+
+
+---
+
+# Comparison Operators
+
+.w-100.lh-copy[
+We can compare two or more values by using comparison operators. These types of operators compare one value to another based on a condition. The result can either be `TRUE` or `FALSE`, known as logical. The following are the most common comparison operators in R:
+]
+
+--
+
+-	double equal to (`==`)
+
+- not equal to (`!=`)
+
+- greater than (`&gt;`)
+
+- less than (`&lt;`)
+
+- greater than or equal to (`&gt;=`)
+
+- less than or equal to (`&lt;=`)
+
+---
+
+### Examples
+
+.pull-left[
+
+```r
+5 == 3
+```
+
+```
+[1] FALSE
+```
+
+
+```r
+25 != 10
+```
+
+```
+[1] TRUE
+```
+
+
+```r
+100 &gt; 30
+```
+
+```
+[1] TRUE
+```
+
+
+```r
+-6 &lt; -5
+```
+
+```
+[1] TRUE
+```
+]
+
+--
+
+.pull-right[
+
+```r
+60 &gt;= 45
+```
+
+```
+[1] TRUE
+```
+
+
+```r
+100 &lt;= 1000
+```
+
+```
+[1] TRUE
+```
+
+
+```r
+0 &lt; -1
+```
+
+```
+[1] FALSE
+```
+
+
+```r
+-1 &gt; 1
+```
+
+```
+[1] FALSE
+```
+
+]
+
+---
+class: middle, center, inverse
+name: var
+
+## Atomic Data Type in R
+
+
+&lt;img src="images/datatypes.png" width="100%" height="100%" /&gt;
+
+
+---
+# Classes of objects in R
+
+.w-100.lh-copy[
+R works with numerous atomic classes of objects. The most basic
+atomic data types are:
+
+- `Numeric` such as integer (4, -2) or float (4.7, -0.26)
+
+- `Character` such as texts (or strings) and must be enclosed within either single or double quotes. e.g. "Nigeria", "COVID-19", "baby", "Hello world".
+
+- `Logical` such as `TRUE` or `FALSE`
+
+- `Complex` - A complex number in mathematics. It is written as `a + bi` where `a` is the real part and `b` is the imaginary part. e.g. `2 + 2i`, `3 - 3i`.
+]
+
+--
+
+.w-100.lh-copy[
+We use `class()` function to check or determine the type of any object in `R`.
+]
+
+---
+
+### Examples
+
+.pull-left[
+
+
+```r
+class(2)
+```
+
+```
+[1] "numeric"
+```
+
+
+
+```r
+class(3.145)
+```
+
+```
+[1] "numeric"
+```
+
+```r
+class("female")
+```
+
+```
+[1] "character"
+```
+
+```r
+class("I am from Abuja")
+```
+
+```
+[1] "character"
+```
+]
+
+.pull-right[
+
+
+```r
+class(TRUE)
+```
+
+```
+[1] "logical"
+```
+
+```r
+class(FALSE)
+```
+
+```
+[1] "logical"
+```
+
+```r
+class(2 + 2i)
+```
+
+```
+[1] "complex"
+```
+
+```r
+class(3 - 6i)
+```
+
+```
+[1] "complex"
+```
+
+]
+
+---
+
+### Variable assignment
+
+.w-100.lh-copy[
+A variable allows you to store a value (e.g. 5) or an object (e.g. a function
+description) in `R`. You can then later use this variable’s name to easily access the value or the object that is stored with it. You can create a variable with the help of an **assignment operator** `&lt;-` or `=`. 
+]
+
+### Examples
+
+--
+
+.pull-left[
+
+
+```r
+ezekiel &lt;- 4
+```
+
+
+```r
+ezekiel
+```
+
+```
+[1] 4
+```
+
+You can access the type of object in `ezekiel`:
+
+
+```r
+class(ezekiel)
+```
+
+```
+[1] "numeric"
+```
+]
+
+--
+.pull-right[
+
+
+```r
+state &lt;- "Lagos"
+```
+
+```r
+state
+```
+
+```
+[1] "Lagos"
+```
+
+
+```r
+class(state)
+```
+
+```
+[1] "character"
+```
+]
+---
+
+## Variable assignment
+
+.pull-left[
+
+```r
+# Age now
+
+age &lt;- 15
+
+age
+```
+
+```
+[1] 15
+```
+
+
+```r
+class(age)
+```
+
+```
+[1] "numeric"
+```
+
+
+```r
+# Next year age
+
+age + 1
+```
+
+```
+[1] 16
+```
+
+
+```r
+# Age two years ago
+
+age - 2
+```
+
+```
+[1] 13
+```
+]
+
+--
+
+.pull-right[
+
+### Other examples
+
+
+```r
+name &lt;- "Gift"
+
+age &lt;- 30
+
+gender &lt;- "Female"
+
+country &lt;- "Nigeria"
+
+smile_face &lt;- TRUE
+```
+
+]
+
+
+---
+
+## Rules for naming variables
+
+.w-100.lh-copy[
+
+* All variables must begin with a letter of the alphabet.
+
+* After the initial letter, variable names can also contain (_ or .) and numbers. No spaces or special characters, however are allowed.
+
+* R is case sensitive. Uppercase characters are different from lowercase characters.
+]
+
+&lt;table&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt; Samples of acceptable variable names &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Samples of unacceptable variable names &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; test.grade &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; test(grade) &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; covid_19_cases &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; covid-19-cases &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; budget2021 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 2021budget &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; sales_price_2021 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; sales price 2021 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;br&gt;
+
+--
+
+.w-100.lh-copy[
+The best naming convention is to choose a variable name that will tell the reader of the program what the variable represents.
+]
+
+---
+
+### Exercise
+
+What is the class of the following data types?
+
+
+
+```r
+age &lt;- 15
+```
+.can-edit[
+ 
+]
+
+
+```r
+diabetic_status &lt;- "No"
+```
+
+.can-edit[
+
+]
+
+
+```r
+five_less_than_2 &lt;- FALSE
+```
+
+.can-edit[
+
+]
+
+
+
+```r
+weight &lt;- "60.4 kg"
+```
+
+.can-edit[
+
+]
+
+
+```r
+smile_face &lt;- "FALSE"
+```
+
+.can-edit[
+
+]
+
+
+
+<div class="countdown" id="timer_60d90479" style="right:0;bottom:0;" data-warnwhen="0">
+<code class="countdown-time"><span class="countdown-digits minutes">00</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">42</span></code>
+</div>
+
+---
+
+## Data type conversions
+
+.w-100.lh-copy[
+`R` allows us to convert objects from one data type to another. For example you may need to convert your `character` variable to a `numeric`. In programming this is called `typecasting` and has a lot of very many useful applications as will be shown later.
+]
+
+--
+
+.w-100.lh-copy[
+Consider the following scenario: You have a variable called `weight` that you assign `"64.45"` to instead of `64.45`. You may need to convert this to numeric/double so that you can use it appropriately in your code.
+]
+
+--
+
+.w-100.lh-copy[
+In order to convert the data, you need to use the `as.datatype_name` function. As part of this function, you specify the data type you are converting to. The following table shows examples of those functions:
+]
+
+--
+
+&lt;table&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt; Data type converting to &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; How to do it &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; numeric &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; as.numeric(variable_name) &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; character &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; as.character(variable_name) &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; logical &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; as.logical(variable_name) &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; complex &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; as.complex(variable_name) &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+---
+### Examples
+
+
+```r
+weight &lt;- "64.45"
+
+smiling_face &lt;- "FALSE"
+
+height &lt;- "161.5 cm"
+```
+--
+
+As you can see, some of the variables are not in the right data type.
+
+--
+
+
+```r
+weight_before &lt;- "64.45"
+
+class(weight_before)
+```
+
+```
+[1] "character"
+```
+
+```r
+weight_now = as.numeric(`weight_before`)
+
+weight_now
+```
+
+```
+[1] 64.45
+```
+
+```r
+class(weight_now)
+```
+
+```
+[1] "numeric"
+```
+
+---
+### Examples
+
+
+```r
+smiling_face_old &lt;- "FALSE"
+
+smiling_face_old
+```
+
+```
+[1] "FALSE"
+```
+
+```r
+class(smiling_face_old)
+```
+
+```
+[1] "character"
+```
+
+```r
+smiling_face_new &lt;- as.logical(`smiling_face_old`)
+
+smiling_face_new
+```
+
+```
+[1] FALSE
+```
+
+```r
+class(smiling_face_new)
+```
+
+```
+[1] "logical"
+```
+
+---
+
+### The `NA` Result
+
+.w-100.lh-copy[
+If R cannot convert an object, then it will return an `NA` (Not Available). This is its way of saying that it tried to convert the value, but it couldn't find anything that would logically match with the conversion. The following scenarios will return `NA` values:
+]
+
+--
+
+- Converting mixed-characters to numeric, e.g. `"334cm"`
+
+--
+
+- Converting any character to logical, except `TRUE(T)` or `FALSE(F)`.
+
+--
+
+
+```r
+height &lt;- "161.5 cm"
+
+as.numeric(`height`)
+```
+
+```
+[1] NA
+```
+
+--
+
+.pull-left[
+
+```r
+smiling_face &lt;- "No"
+
+as.logical(`smiling_face`)
+```
+
+```
+[1] NA
+```
+]
+
+--
+
+.pull-right[
+
+```r
+smiling_face &lt;- "Yes"
+
+as.logical(`smiling_face`)
+```
+
+```
+[1] NA
+```
+]
+---
+
+class: center, middle, inverse
+name: basic
+
+# Basic data structure in R
+
+&lt;img src="images/datatstruc.png" width="60%" height="95%" /&gt;
+
+---
+class: middle 
+
+# Basic data structure 
+
+--
+
+1. [Vector :  A collection of elements of the same class](#vector)
+
+--
+
+1. [Matrix : All columns must uniformly contain only one data type](#matrix)
+
+--
+
+1. [Data frame : The columns can contain different classes](#df)
+
+--
+
+1. [List : Can hold object of different classes and length](#list)
+
+---
+
+class: middle, center, inverse
+name: vector
+
+# Vector
+
+&lt;img src="images/vector.png" width="65%" height="95%" /&gt;
+
+---
+## A vector
+
+.w-100.lh-copy[
+A vector is a one-dimensional array that can hold data type. In `R`, you can create a vector by using combine or concatenate function, `c()`. When using `c()`, you will place a comma in between the objects (vector elements) you want to combine.
+]
+
+--
+
+### Examples
+
+
+```r
+covid_confirmed &lt;- c(31, 30, 37, 25, 33, 34, 26, 32, 23, 45)
+```
+--
+
+
+```r
+month &lt;- c("January", "February", "March", "April", "May", "June", "July", "August", "September", "October")
+```
+--
+
+
+```r
+gender &lt;- c("Male", "Female", "Female", "Male", "Female", "Male")
+```
+
+--
+#### Note
+
+.w-100.lh-copy[
+Adding a space after every comma in the `c()` function improves the readability of your code.
+]
+
+---
+layout: true
+## A vector
+
+---
+.w-100.lh-copy[
+
+A vector can be of different data type such as `numeric`, `character`, `logical`, or `factor`.
+]
+
+--
+
+### Examples
+
+
+```r
+covid_confirmed &lt;- c(31, 30, 37, 25, 33, 34, 26, 32, 23, 45)
+
+class(covid_confirmed)
+```
+
+```
+[1] "numeric"
+```
+--
+
+
+```r
+month &lt;- c("January", "February", "March", "April", "May", "June", "July", "August", "September", "October")
+
+class(month)
+```
+
+```
+[1] "character"
+```
+---
+
+
+```r
+diabetic_status &lt;- c(TRUE, FALSE, FALSE, TRUE, FALSE, TRUE)
+
+class(diabetic_status)
+```
+
+```
+[1] "logical"
+```
+--
+
+
+```r
+complex_vector &lt;- c(2 + 1i, 3 - 2i, 1 + 1i, 4 - 2i, 2i, 1 - 3i)
+
+class(complex_vector)
+```
+
+```
+[1] "complex"
+```
+--
+
+.w-100.lh-copy[
+You can perform a lot of mathematical analysis with complex data type (`z`) by using some of the following functions:
+]
+
+--
+
+.pull-left[
+`Re(z)` - real part of a complex number
+
+`Im(z)` - imaginary part of a complex number
+
+`Mod(z)` - modulus of a complex number
+]
+
+--
+
+.pull-right[
+`Arg(z)` - argument of a complex number
+
+`Conj(z)` - conjugate of a complex number
+]
+
+---
+layout: false
+
+### A factor vector
+
+.w-100.lh-copy[
+A categorical variable where each level is a category will be of type `factor`. For example, gender is a categorical variable that has two levels, "Male" or "Female". We can easily get a factor vector from a character vector by using the function `factor()` or `as.factor()`.
+]
+--
+
+**Example 1**
+
+You can create a factor vector directly by using the function `factor()`:
+
+--
+
+
+```r
+gender_factor &lt;- factor(c("Male", "Female", "Female", "Male", "Female"))
+
+gender_factor
+```
+
+```
+[1] Male   Female Female Male   Female
+Levels: Female Male
+```
+--
+
+
+```r
+class(gender_factor)
+```
+
+```
+[1] "factor"
+```
+--
+
+
+```r
+levels(gender_factor)
+```
+
+```
+[1] "Female" "Male"  
+```
+---
+
+**Example 2**
+
+.w-100.lh-copy[
+If you already have a `character vector`, then you can use `as.factor()` function to convert it to a `factor  vector`.
+]
+
+--
+
+
+```r
+gender &lt;- c("Male", "Female", "Female", "Male", "Female")
+
+gender_factor &lt;- as.factor(gender)
+
+gender_factor
+```
+
+```
+[1] Male   Female Female Male   Female
+Levels: Female Male
+```
+--
+
+
+```r
+class(gender_factor)
+```
+
+```
+[1] "factor"
+```
+--
+
+
+```r
+levels(gender_factor)
+```
+
+```
+[1] "Female" "Male"  
+```
+---
+
+## Length of a vector
+
+You can get the length of a vector by using the function `length()`:
+
+
+```r
+covid_confirmed &lt;- c(31, 30, 37, 25, 33, 34, 26, 32, 23, 45)
+
+length(covid_confirmed)
+```
+
+```
+[1] 10
+```
+
+
+```r
+month &lt;- c("January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December")
+
+length(month)
+```
+
+```
+[1] 12
+```
+
+
+```r
+gender &lt;- c("Male", "Female", "Female", "Male", "Female", "Male")
+
+length(gender)
+```
+
+```
+[1] 6
+```
+
+---
+
+## Naming a vector
+.w-100.lh-copy[
+As a data analyst, it is important to have a clear view on the data that you are using. Understanding what each element refers to is essential. You can give  a name to the elements of a vector with the `names()` function
+]
+
+### Example
+
+
+```r
+sales_amount &lt;- c(140000, 200000, 600000, 180000, 170000)
+
+names(sales_amount) &lt;- c("Monday", "Tuesday", "Wednessday", "Thursday", "Friday")
+
+sales_amount
+```
+
+```
+    Monday    Tuesday Wednessday   Thursday     Friday 
+    140000     200000     600000     180000     170000 
+```
+
+---
+
+### Arithmetic operations with vectors
+
+If you add two vectors together, R sum it element-wise.
+
+#### Example 
+
+
+```r
+egg_weight1 &lt;- c(59, 56, 61, 68, 52, 53, 69, 54, 57, 51)
+
+egg_weight2 &lt;- c(56, 51, 69, 52, 57, 68, 61, 54, 59, 53)
+```
+
+
+```r
+total_weight &lt;- egg_weight1 + egg_weight2
+
+total_weight
+```
+
+```
+ [1] 115 107 130 120 109 121 130 108 116 104
+```
+
+--
+
+#### Exercise
+
+
+```r
+oyo_covid_19 &lt;- c("36", "26", "30", "22", "35", "34", "37", "24", "32", "40")
+
+lagos_covid_19 &lt;- c(49, 33, 36, 67, 65, 32, 63, 48, 57, 30)
+```
+Why would `oyo_covid_19 + lagos_covid_19` throw an error?  
+--
+How can you correct it?
+
+.can-edit[
+
+]
+
+
+
+---
+
+# Vector selection
+.w-100.lh-copy[
+To select elements of a vector (and later matrices, data frames), you will use square brackets `[ ]` and between the square brackets, you indicate the index of elements to select.
+
+R index starts with `\(1\)`, for example:
+]
+
+&lt;table&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:center;"&gt; week_day &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; Monday &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; Tuesday &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; Wednessday &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; Thursday &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; Friday &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; Saturday &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; Sunday &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt; index &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 3 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 4 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 5 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 6 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 7 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+.w-100.lh-copy[
+To access the first element of a vector `week_day`, you type `week_day[1]` and for second element, you typed `week_day[2]`.
+]
+---
+
+### Example
+
+
+```r
+week_day &lt;- c("Monday", "Tuesday", "Wednessday", "Thursday", "Friday", "Saturday", "Sunday")
+```
+
+
+```r
+week_day[1]
+```
+
+```
+[1] "Monday"
+```
+
+```r
+week_day[2]
+```
+
+```
+[1] "Tuesday"
+```
+--
+
+### Exercise
+
+How can we access `Monday` and `Thursday` from the vector, `week_day`?
+
+.can-edit[
+ 
+]
+
+<div class="countdown" id="timer_60d90552" style="right:0;bottom:0;" data-warnwhen="0">
+<code class="countdown-time"><span class="countdown-digits minutes">02</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
+</div>
+
+---
+
+### Exercise
+
+.w-100.lh-copy[
+Data relating to the marks of 13 students in the Introduction to R quiz are giving below:
+
+`10, 15, 10, 9, 18, 16, 14, 12, 16, 13, 15, 20, 17`.
+]
+
+- Create a vector name `score` for the data 
+
+.can-edit[
+ 
+]
+
+
+- Use R to access the score of the 1st, 5th and 10th student (each individually)
+
+.can-edit[
+ 
+]
+
+- Use R to access them altogether
+
+.can-edit[
+ 
+]
+
+<div class="countdown" id="timer_60d90747" style="right:0;bottom:0;" data-warnwhen="0">
+<code class="countdown-time"><span class="countdown-digits minutes">02</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
+</div>
+
+---
+
+## Think about it!
+
+
+```r
+marks &lt;- c(10, 15, 10, 9, 18, 16, 14, 12, 16, 13, 15, 20, 17)
+
+marks[marks &gt; 13]
+```
+
+<div class="countdown" id="timer_60d905c4" style="right:0;bottom:0;" data-warnwhen="0">
+<code class="countdown-time"><span class="countdown-digits minutes">01</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
+</div>
+
+---
+## Special vectors 
+
+--
+
+
+```r
+a &lt;- 1:10 # Create sequence 1 to 10
+
+a
+```
+
+```
+ [1]  1  2  3  4  5  6  7  8  9 10
+```
+--
+
+
+```r
+b &lt;- 10:1 # Create sequence 10 to 1
+
+b
+```
+
+```
+ [1] 10  9  8  7  6  5  4  3  2  1
+```
+---
+layout: true
+
+### Data simulation using `seq()` function
+
+---
+The `seq()` function generate  sequence of number.
+
+`seq(from, to, by, length.out)`
+
+--
+
+.pull-left[
+`from`: the start of the sequence
+
+`to`: the end of the sequence
+]
+
+--
+.pull-right[
+`by`: increment of the sequence
+
+`length.out`: desired length of the sequence.
+]
+
+--
+
+To get help on `seq()` function, use `?seq`
+
+
+```r
+?seq
+```
+
+---
+
+#### Examples
+
+
+```r
+seq(from = 1, to = 16, by = 2)
+```
+
+```
+[1]  1  3  5  7  9 11 13 15
+```
+--
+
+
+```r
+seq(1, 8, 0.1)
+```
+
+```
+ [1] 1.0 1.1 1.2 1.3 1.4 1.5 1.6 1.7 1.8 1.9 2.0 2.1 2.2 2.3 2.4 2.5 2.6 2.7 2.8
+[20] 2.9 3.0 3.1 3.2 3.3 3.4 3.5 3.6 3.7 3.8 3.9 4.0 4.1 4.2 4.3 4.4 4.5 4.6 4.7
+[39] 4.8 4.9 5.0 5.1 5.2 5.3 5.4 5.5 5.6 5.7 5.8 5.9 6.0 6.1 6.2 6.3 6.4 6.5 6.6
+[58] 6.7 6.8 6.9 7.0 7.1 7.2 7.3 7.4 7.5 7.6 7.7 7.8 7.9 8.0
+```
+
+--
+
+
+```r
+seq(7, 1, -0.1)
+```
+
+```
+ [1] 7.0 6.9 6.8 6.7 6.6 6.5 6.4 6.3 6.2 6.1 6.0 5.9 5.8 5.7 5.6 5.5 5.4 5.3 5.2
+[20] 5.1 5.0 4.9 4.8 4.7 4.6 4.5 4.4 4.3 4.2 4.1 4.0 3.9 3.8 3.7 3.6 3.5 3.4 3.3
+[39] 3.2 3.1 3.0 2.9 2.8 2.7 2.6 2.5 2.4 2.3 2.2 2.1 2.0 1.9 1.8 1.7 1.6 1.5 1.4
+[58] 1.3 1.2 1.1 1.0
+```
+---
+.w-100.lh-copy[
+If you have a sequence of number and you don't know the last element, say you just know the start of the sequence and the length of the sequence, e.g.
+]
+
+--
+
+
+```r
+seq(5, by = 2, length = 50)
+```
+
+```
+ [1]   5   7   9  11  13  15  17  19  21  23  25  27  29  31  33  35  37  39  41
+[20]  43  45  47  49  51  53  55  57  59  61  63  65  67  69  71  73  75  77  79
+[39]  81  83  85  87  89  91  93  95  97  99 101 103
+```
+---
+layout: true
+
+### Data simulation using the `rep()` function
+
+---
+The `rep()` function repeat elements for a certain number of time
+
+`rep(x, times = 1, length.out = NA, each = 1)`
+
+`x`: object to repeat 
+
+`times`: number of times to repeat each element
+
+`length.out`: The desired length of the output vector.
+
+`each`: Each element of x is repeated each times.
+
+--
+
+#### Example 1
+
+
+```r
+rep(5, 10) # Repeat 5 in 10 times
+```
+
+```
+ [1] 5 5 5 5 5 5 5 5 5 5
+```
+
+---
+
+#### More examples
+
+
+```r
+rep("God is good", 5)
+```
+
+```
+[1] "God is good" "God is good" "God is good" "God is good" "God is good"
+```
+--
+
+
+```r
+rep(1:4, 5) # Repeat 1 to 4 in five times
+```
+
+```
+ [1] 1 2 3 4 1 2 3 4 1 2 3 4 1 2 3 4 1 2 3 4
+```
+--
+
+
+```r
+rep(c("Female", "Male"), 4)
+```
+
+```
+[1] "Female" "Male"   "Female" "Male"   "Female" "Male"   "Female" "Male"  
+```
+--
+
+
+```r
+rep(1:4, each = 3) # repeat each element in 3 times
+```
+
+```
+ [1] 1 1 1 2 2 2 3 3 3 4 4 4
+```
+
+---
+
+#### Think about these:
+
+
+```r
+rep(1:4, each = 3, time = 2)
+
+rep(1:4, 1:4)
+
+rep(1:4, c(4, 1, 8, 2))
+```
+
+<div class="countdown" id="timer_60d904a4" style="right:0;bottom:0;" data-warnwhen="0">
+<code class="countdown-time"><span class="countdown-digits minutes">02</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
+</div>
+---
+layout: true
+
+### Data simulation using `sample()` function 
+
+---
+.w-100.lh-copy[
+The `sample()` function allows you to draw random samples of elements from a vector.
+
+`sample(x, size, replace = FALSE, prob = NULL)`
+
+`x`: A vector of outcomes you want to sample from.
+
+`size`: The number of samples you want to draw
+
+`replace`: Should sampling be done with replacement (`TRUE`/`FALSE`)
+
+`prob`: A vector of probabilities of the same length as `x` indicating how likely each outcome in `x` is. If you don’t specify the prob argument, all outcomes will be equally likely.
+]
+
+---
+
+### Example 
+
+.w-100.lh-copy[
+Randomly pick four fruits from the list of fruits in Apple, Banana, Cherry, Orange, Pineapples, Grape, and Pawpaw.
+]
+
+--
+
+
+```r
+fruit &lt;- c("Apple", "Banana", "Cherry", "Orange", "Pineapples", "Grape", "Pawpaw")
+
+sample(x = fruit, size = 4)
+```
+
+```
+[1] "Pawpaw"     "Orange"     "Cherry"     "Pineapples"
+```
+--
+
+Since data generated by using `sample()` function is purely randomized, 
+--
+if you run the same `sample(x = fruit, size= 4)` again, a different data would be generated.
+
+
+```r
+sample(x = fruit, size = 4)
+```
+
+```
+[1] "Banana" "Cherry" "Apple"  "Orange"
+```
+---
+
+.w-100.lh-copy[
+The `set.seed()` function helps us to generate the same data when you specify any integer in it.
+]
+
+--
+
+#### Example 1
+
+
+```r
+set.seed(121)
+
+fruit &lt;- c("Apple", "Banana", "Cherry", "Orange", "Pineapple", "Grape", "Pawpaw", "Mango", "Carrot")
+
+sample(fruit, size = 5)
+```
+
+```
+[1] "Orange" "Carrot" "Mango"  "Pawpaw" "Apple" 
+```
+--
+
+#### Example 2
+
+
+```r
+set.seed(121)
+
+fruit &lt;- c("Apple", "Banana", "Cherry", "Orange", "Pineapple", "Grape", "Pawpaw", "Mango", "Carrot")
+
+sample(fruit, size = 5)
+```
+
+```
+[1] "Orange" "Carrot" "Mango"  "Pawpaw" "Apple" 
+```
+
+### Example 4
+
+Draw 20 samples from the integers 1 to 10 with replacement.
+
+--
+
+
+```r
+sample(x = 1:10, size = 20, replace = TRUE)
+```
+
+```
+ [1]  1  3  7  5  1  8 10  2  1  2  4  5 10  6  8  7  2  9  6  8
+```
+
+---
+
+.w-100.lh-copy[
+Let’s simulate `10` flips of a biased coin, where the probability of getting a Head (`H`) is `0.7` and the probability of a Tail(`T`) is `0.3`.
+]
+
+--
+
+
+```r
+sample(
+  x = c("H", "T"),
+  prob = c(0.7, 0.3), # Make the coin biased for Heads
+  size = 10,
+  replace = TRUE
+)
+```
+
+```
+ [1] "H" "H" "H" "H" "T" "T" "T" "T" "H" "H"
+```
+
+--
+
+### Exercise
+
+.w-100.lh-copy[
+Suppose you are drawing coins from a treasure chest. There are 100 coins in this chest: 20 gold, 30 silver, and 50 bronze.
+]
+
+Use R to draw 10 random coins from the chest.
+
+.can-edit[
+
+]
+
+<div class="countdown" id="timer_60d907f7" style="right:0;bottom:0;" data-warnwhen="0">
+<code class="countdown-time"><span class="countdown-digits minutes">02</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
+</div>
+---
+layout: true
+
+## Statistical distribution- Data simulation
+
+---
+
+Statistics has so many distributions. Some are discrete while some are continuous. 
+
+--
+
+### Discrete distribution
+
+- Binomial
+- Poisson
+- Geometric
+and many more
+
+--
+
+### Continuous distribution
+
+- Normal 
+- Uniform
+- Exponential
+- Beta
+and many more.
+
+--
+
+You can use `?Distributions` to get the list and references to each of the distributions.
+
+
+```r
+?Distributions
+```
+
+---
+
+### The Poisson distribution
+
+--
+.w-100.lh-copy[
+Poisson distribution is a probability distribution that can be used to show how many times an event is likely to occur within a specified period of time. Poisson distribution has only one parameter, lambda, `\(\lambda\)`,  and to generate samples from it in R, we use the function `rpois()`.
+]
+
+--
+
+`rpois(n, lambda)`
+
+`n`: number of random values to return.
+
+`lambda`: the mean of the distribution
+
+---
+
+### Example
+
+Draw 40 samples from a Poisson distribution with `lambda = 45`.
+
+--
+
+
+```r
+poisson_data &lt;- rpois(n = 40, lambda = 45)
+
+poisson_data
+```
+
+```
+ [1] 49 39 50 45 57 37 49 47 46 48 57 45 42 58 45 37 49 45 48 44 40 47 43 46 49
+[26] 41 41 51 63 44 52 54 40 51 35 34 49 40 52 53
+```
+---
+
+
+```r
+hist(poisson_data)
+```
+
+![](slide-script_files/figure-html/unnamed-chunk-120-1.png)&lt;!-- --&gt;
+
+---
+
+### Normal distribution
+
+--
+
+.w-100.lh-copy[
+The Normal also known as Gaussian distribution is one of the most important distribution in statistics. The Normal distribution is bell-shaped, and has only two parameters: the mean and the standard deviation. To generate samples from a normal distribution in R, we use the function `rnorm()`.
+]
+--
+
+`rnorm(n, mean = 0, sd = 1)`
+
+`n`:	The number of observations to draw from the distribution
+
+`mean`	The mean of the distribution
+
+`sd`:	The standard deviation of the distribution
+
+---
+
+### Example
+
+Draw 100 samples from a Normal distribution with `mean = 30`, `sd = 5`
+
+--
+
+
+```r
+normal_data &lt;- rnorm(n = 100, mean = 30, sd = 5)
+
+normal_data
+```
+
+```
+  [1] 31.12392 32.84103 37.11626 25.26722 26.66344 23.92486 29.41394 26.54702
+  [9] 27.39451 27.69197 33.99195 31.97516 30.18051 32.56419 27.72963 30.69346
+ [17] 22.99874 26.72993 34.74840 28.58783 28.00036 31.47279 27.77975 30.24608
+ [25] 28.79174 31.02570 29.18763 34.12832 33.31553 27.88033 33.49833 33.34358
+ [33] 35.66535 26.32012 27.08142 33.99368 29.49659 31.21729 35.60035 32.61113
+ [41] 26.70982 35.85759 26.95216 31.82667 20.82465 35.04950 30.63998 25.41393
+ [49] 32.87921 28.21368 27.09357 32.62903 38.95762 30.19875 33.55443 33.09275
+ [57] 22.61249 24.80197 38.41342 23.78437 33.67899 31.33060 39.54455 33.05498
+ [65] 24.33590 30.94284 32.01166 31.95707 25.26981 30.99774 27.81430 28.42590
+ [73] 33.47253 32.14223 29.86815 33.69430 24.50674 36.55951 39.83468 30.32734
+ [81] 26.58312 24.51322 36.32394 21.80924 25.16731 17.40023 35.00213 27.11599
+ [89] 34.44281 22.59664 29.44673 37.49703 21.01652 29.11484 25.00444 28.53699
+ [97] 25.76137 24.35463 32.86758 35.94290
+```
+
+---
+
+
+```r
+hist(normal_data)
+```
+
+![](slide-script_files/figure-html/unnamed-chunk-122-1.png)&lt;!-- --&gt;
+
+---
+layout: false
+## Examination on vector
+
+.panelset[
+
+.panel[.panel-name[Exercise]
+
+1. Create a vector of numbers from `1` to `50`.
+
+2. if x is a vector with elements `2, 3, 4, 2, 4, 5, 3, 5, 3, and 5`. Use R to get its length.
+
+  - Find the sum, mean, and variance of vector `x`. 
+  
+  - Plot a beautiful bar chart for the vector `x`
+
+3.  `x = 2`, `y = 3`, and `z = 6`
+
+  - what is `\((x+y)^3\)`?
+
+  - what is `\(\frac{z}{y}\)`?
+
+4. Height and weight are known to follow a normal distribution. 
+
+   `height ~ N(60, 12)` and `weight ~ N(90, 14)`
+   
+   Generate 50 observations for both `height` and `weight`.
+  
+  <div class="countdown" id="timer_60d90785" style="right:0;bottom:0;" data-warnwhen="60">
+<code class="countdown-time"><span class="countdown-digits minutes">05</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
+</div>
+
+  ]
+
+.panel[.panel-name[Solution 1-2]
+
+#### Solution 1
+
+
+```r
+number &lt;- 1:50
+```
+#### Solution 2
+
+
+```r
+x &lt;- c(2, 3, 4, 2, 4, 5, 3, 5, 3, 5)
+
+sum(x)
+mean(x)
+var(x)
+barplot(table(x), col = "purple")
+```
+
+--
+
+#### Important note
+
+The `table()` function helps us to create a frequency table while `barplot()` plots the bar chart of the result.
+]
+.panel[.panel-name[Solution 3-4]
+
+#### Solution 3
+
+
+```r
+x &lt;- 2
+y &lt;- 3
+z &lt;- 6
+
+(x + y)^3
+
+x / y
+```
+#### Solution 4
+
+
+```r
+height &lt;- rnorm(50, 60, 12)
+
+weight &lt;- rnorm(50, 90, 14)
+```
+]
+
+]
+
+---
+class: center, middle, inverse
+name: matrix
+
+# Matrices
+
+
+---
+# Matrices
+
+.w-100.lh-copy[
+In R, a matrix is a collection of elements of the same data type (numeric, character, or logical) arranged into a fixed number of rows and columns.
+
+Since we are only working with rows and columns, a matrix is called a two dimensional array.
+
+You can construct a matrix in R by using `matrix()` function.
+]
+
+--
+
+`matrix(data = NA, nrow = 1, ncol = 1, byrow = FALSE)`
+
+--
+.w-100.lh-copy[
+* The first argument is the collection of elements that `#rstats` will arrange into the rows and columns of the matrix. For example, `c(1, 2, 3, 4, 5, 6, 7, 8, 9)` or its shortcut, `1:9`. 
+
+* The argument `nrow` indicates the number of rows while `ncol` is the number of columns in the matrix
+
+* The argument `byrow` indicates that the matrix is filled row-wise. If we want the matrix to be filled column-wise, we just set `byrow = FALSE`.
+]
+---
+
+### Example
+
+
+```r
+A &lt;- matrix(1:9, nrow = 3, byrow = TRUE)
+
+A
+```
+
+```
+     [,1] [,2] [,3]
+[1,]    1    2    3
+[2,]    4    5    6
+[3,]    7    8    9
+```
+--
+
+### Short group work
+
+Create the matrix `A` with R:
+
+
+`$$A = \begin{pmatrix}
+1&amp;7&amp;13\\
+3&amp;9&amp;15\\
+5&amp;11&amp;17
+\end{pmatrix}$$`
+
+
+.can-edit[
+
+]
+
+
+<div class="countdown" id="timer_60d907d8" style="right:0;bottom:0;" data-warnwhen="0">
+<code class="countdown-time"><span class="countdown-digits minutes">01</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
+</div>
+
+---
+
+### Other examples
+
+`$$A = \begin{pmatrix}
+1&amp;-2&amp; 5\\
+-3&amp;9&amp;4\\
+5&amp;0&amp;6
+\end{pmatrix}$$`
+
+
+```r
+A &lt;- matrix(c(1, -3, 5, -2, 9, 0, 5, 4, 6), nrow = 3, ncol = 3, byrow = FALSE)
+```
+--
+
+`$$B = \begin{pmatrix}
+2&amp;-8&amp; 14\\
+4&amp;10&amp;16\\
+6&amp;12&amp;18
+\end{pmatrix}$$`
+
+
+```r
+B &lt;- matrix(c(2, 4, 6, 8, 10, 12, 14, 16, 18), nrow = 3, ncol = 3, byrow = FALSE)
+
+B
+```
+
+```
+     [,1] [,2] [,3]
+[1,]    2    8   14
+[2,]    4   10   16
+[3,]    6   12   18
+```
+
+---
+layout: true
+
+## Matrices slicing
+
+---
+
+To select elements in a matrix we use square brackets `[ , ]`, between the square brackets, you indicate the position of the row and column in which the elements to select are.
+
+`$$A = \begin{pmatrix}
+1&amp;-2&amp; 5\\
+-3&amp;9&amp;4\\
+5&amp;0&amp;6
+\end{pmatrix}$$`
+
+
+To select the element in the first row and second column of matrix **A**, you type `A[1, 2]`.  To select the element in the third row and second column of matrix **A**, you type `A[3, 2]`. 
+
+.can-edit[
+
+]
+
+### Examples
+
+--
+
+.pull-left[
+
+```r
+A[1, 2]
+```
+
+```
+[1] -2
+```
+]
+
+--
+
+.pull-right[
+
+
+```r
+A[3, 2]
+```
+
+```
+[1] 0
+```
+
+]
+
+---
+
+Consider the following matrix:
+
+`$$A = \begin{pmatrix}
+1&amp;-2&amp; 5\\
+-3&amp;9&amp;4\\
+5&amp;0&amp;6
+\end{pmatrix}$$`
+
+--
+
+How would you select the following matrices from A?
+
+--
+
+.pull-left[
+`$$B = \begin{pmatrix}
+1&amp;-2\\
+-3&amp;9
+\end{pmatrix}$$`
+]
+
+
+
+.pull-right[
+`$$C = \begin{pmatrix}
+1&amp; 5\\
+5&amp;6
+\end{pmatrix}$$`
+
+]
+
+.can-edit[
+
+]
+
+
+<div class="countdown" id="timer_60d904d5" style="right:0;bottom:0;" data-warnwhen="0">
+<code class="countdown-time"><span class="countdown-digits minutes">03</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
+</div>
+
+
+---
+layout: false
+
+## Arithmetic Operation in Matrices
+
+.w-100.lh-copy[
+We can perform all the arithmetic operations on matrices. Consider the following matrices
+]
+
+.pull-left[
+`$$A = \begin{pmatrix}
+1&amp;-2&amp; 5\\
+-3&amp;9&amp;4\\
+5&amp;0&amp;6
+\end{pmatrix}$$`
+]
+
+--
+
+.pull-right[
+
+`$$B = \begin{pmatrix}
+2&amp;-8&amp; 14\\
+4&amp;10&amp;16\\
+6&amp;12&amp;18
+\end{pmatrix}$$`
+
+]
+
+--
+
+
+```r
+A &lt;- matrix(c(1, -3, 5, -2, 9, 0, 5, 4, 6), nrow = 3, ncol = 3, byrow = FALSE)
+```
+
+--
+
+
+```r
+B &lt;- matrix(c(2, 4, 6, 8, 10, 12, 14, 16, 18), nrow = 3, ncol = 3, byrow = FALSE)
+```
+
+---
+layout: true 
+
+.pull-left[
+`$$A = \begin{pmatrix}
+1&amp;-2&amp; 5\\
+-3&amp;9&amp;4\\
+5&amp;0&amp;6
+\end{pmatrix}$$`
+]
+
+
+.pull-right[
+
+`$$B = \begin{pmatrix}
+2&amp;-8&amp; 14\\
+4&amp;10&amp;16\\
+6&amp;12&amp;18
+\end{pmatrix}$$`
+
+]
+
+---
+
+### Addition
+
+
+```r
+A + B
+```
+
+```
+     [,1] [,2] [,3]
+[1,]    3    6   19
+[2,]    1   19   20
+[3,]   11   12   24
+```
+
+### Subtraction
+
+
+```r
+A - B
+```
+
+```
+     [,1] [,2] [,3]
+[1,]   -1  -10   -9
+[2,]   -7   -1  -12
+[3,]   -1  -12  -12
+```
+
+---
+
+### Multiplication
+
+
+```r
+A %*% B
+```
+
+```
+     [,1] [,2] [,3]
+[1,]   24   48   72
+[2,]   54  114  174
+[3,]   46  112  178
+```
+
+
+### Transpose
+
+
+```r
+t(A)
+```
+
+```
+     [,1] [,2] [,3]
+[1,]    1   -3    5
+[2,]   -2    9    0
+[3,]    5    4    6
+```
+
+---
+
+### Determinant
+
+
+```r
+det(A)
+```
+
+```
+[1] -247
+```
+
+```r
+det(B)
+```
+
+```
+[1] 0
+```
+
+### Inverse
+
+
+```r
+solve(A)
+```
+
+```
+           [,1]        [,2]        [,3]
+[1,] -0.2186235 -0.04858300  0.21457490
+[2,] -0.1538462  0.07692308  0.07692308
+[3,]  0.1821862  0.04048583 -0.01214575
+```
+---
+class: center, middle, inverse
+layout: false
+name: df
+
+# Data frame
+
+---
+# Data frame
+
+.w-100.lh-copy[
+A data frame is another way to put data in a table! Unlike matrices, data frame can have different types of data!
+
+A data frame has the variables of a data set as `columns` and the observations as `rows`. This will be a familiar concept for those coming from different statistical software packages such as `Excel`, `SPSS`, or `STATA`. We create a data frame by using `data.frame()` function.
+]
+---
+
+### Example 1
+
+.w-100.lh-copy[
+Create a data frame with columns name `age`, `gender`, and `bank account`.
+]
+
+
+```r
+demographic_data &lt;- data.frame(
+  age = c(16, 18, 13, 22, 18),
+  gender = c("Female", "Female", "Male", "Male", "Female"),
+  bank_account = c("No", "Yes", "No", "Yes", "Yes")
+)
+
+demographic_data
+```
+
+```
+  age gender bank_account
+1  16 Female           No
+2  18 Female          Yes
+3  13   Male           No
+4  22   Male          Yes
+5  18 Female          Yes
+```
+
+--
+
+.w-100.lh-copy[
+The number `1 2 3 4 5` at the left hand side on your `console` are `row` labels. Also note that each **column** in a data frame is a **vector**!
+]
+
+---
+
+### Example 2
+
+.w-100.lh-copy[
+Create a data frame with columns `states`, `confirmed cases`, `recovered cases` and `death cases`.]
+
+
+```r
+states &lt;- c("Lagos", "FCT", "Plateau", "Kaduna", "Rivers", "Oyo")
+
+confirmed_cases &lt;- c(58033, 19753, 9030, 8998, 7018, 6838)
+
+recovered_cases &lt;- c(56990, 19084, 8967, 8905, 6875, 6506)
+
+death_cases &lt;- c(439, 165, 57, 65, 101, 123)
+
+covid_19 &lt;- data.frame(states, confirmed_cases, recovered_cases, death_cases)
+
+covid_19
+```
+
+```
+   states confirmed_cases recovered_cases death_cases
+1   Lagos           58033           56990         439
+2     FCT           19753           19084         165
+3 Plateau            9030            8967          57
+4  Kaduna            8998            8905          65
+5  Rivers            7018            6875         101
+6     Oyo            6838            6506         123
+```
+
+
+
+---
+# Creating data frame
+
+.panelset[
+
+.panel[.panel-name[Exercise]
+
+Create a data frame for the following data:
+
+
+```
+  gender height weight
+1   Male     58     68
+2   &lt;NA&gt;     59    115
+3 Female     NA    117
+4 Female     60    120
+5   Male     61    123
+6 Female     62    126
+7   &lt;NA&gt;     NA    100
+```
+
+<div class="countdown" id="timer_60d906dd" style="right:0;bottom:0;" data-warnwhen="0">
+<code class="countdown-time"><span class="countdown-digits minutes">02</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
+</div>
+.can-edit[
+
+]
+
+]
+
+.panel[.panel-name[Solution]
+
+
+```r
+gender &lt;- c("Male", NA, "Female", "Female", "Male", "Female", NA)
+
+height &lt;- c(58, 59, NA, 60, 61, 62, NA)
+
+weight &lt;- c(68, 115, 117, 120, 123, 126, 100)
+
+obese_data &lt;- data.frame(gender, height, weight)
+
+obese_data
+```
+
+```
+  gender height weight
+1   Male     58     68
+2   &lt;NA&gt;     59    115
+3 Female     NA    117
+4 Female     60    120
+5   Male     61    123
+6 Female     62    126
+7   &lt;NA&gt;     NA    100
+```
+]
+]
+
+
+---
+layout: true
+
+### Quick, have a look at your dataset
+---
+
+---
+
+.w-100.lh-copy[
+Working with large datasets is common in data science. When you work with (extremely) large datasets and data frames, your first task as a data analyst is to develop a clear understanding of its structure and main elements. Therefore, it is often useful to show only part of the entire dataset.
+]
+
+--
+
+**1.** `head()`: enables you to show the first observations of a data frame.
+
+--
+
+**2.** `tail()`: enables you to print out the last observations in your dataset.
+
+--
+
+Both `head()` and `tail()` print a top line called `header`, which contains the names of the different variables in your data set.
+
+--
+
+Another method that is often used to get a rapid overview of your dataset is the function `str()`. 
+
+--
+
+**3.** `str()`: shows you the structure of your dataset 
+
+The structure of a data frame tells you :
+  
+1. The total number of observations
+2. The total number of variables
+3. A full list of the variables names
+4. The first observations
+
+---
+
+.w-100.lh-copy[
+Applying the `str()` function will often be the first thing that you do when receiving a new dataset or data frame. It is a great way to get more insight in your dataset before diving into the real analysis.
+]
+
+--
+
+**4.** `names()`: prints each column name in a  data frame. 
+
+--
+
+**5.** `nrow()`: returns the number of rows present in a `data frame`.
+
+--
+
+**6.** `ncol()`: returns the number of columns present in a `data frame`.
+
+--
+
+**7.** `dim()`: returns the number of rows and columns in a data frame.
+
+--
+
+.w-100.lh-copy[
+**8.** `View()`: invoke a spreadsheet-style data viewer on a data frame. 
+]
+
+--
+
+.w-100.lh-copy[
+That is, it opens a new tab in the RStudio to display the entire data frame in a spreadsheet-style.
+]
+
+--
+.w-100.lh-copy[
+**9.** `summary()`: returns summary or descriptive statistics of all columns in a data frame
+]
+
+
+---
+layout: false
+
+### Example
+
+Consider the following vectors:
+
+
+```r
+set.seed(2021)
+
+gender &lt;- sample(c("Male", "Female"), 120, replace = TRUE)
+
+
+height &lt;- floor(rnorm(n = 120, mean = 3, sd = 0.5))
+
+weight &lt;- ceiling(rnorm(n = 120, mean = 55, sd = 9))
+
+bmi &lt;- weight / height^2
+```
+
+--
+
+Create a `data frame` for the data.
+--
+
+
+```r
+medical_data &lt;- data.frame(gender, height, weight, bmi)
+```
+
+---
+layout: true
+
+### Examine the data frame
+
+---
+
+
+```r
+head(medical_data, 5)
+```
+
+```
+  gender height weight       bmi
+1   Male      3     47  5.222222
+2 Female      2     46 11.500000
+3 Female      3     58  6.444444
+4 Female      2     64 16.000000
+5   Male      3     62  6.888889
+```
+
+```r
+tail(medical_data, 3)
+```
+
+```
+    gender height weight       bmi
+118   Male      3     49  5.444444
+119   Male      2     51 12.750000
+120 Female      3     51  5.666667
+```
+
+```r
+str(medical_data)
+```
+
+```
+'data.frame':	120 obs. of  4 variables:
+ $ gender: Factor w/ 2 levels "Female","Male": 2 1 1 1 2 1 1 1 1 1 ...
+ $ height: num  3 2 3 2 3 2 3 3 2 2 ...
+ $ weight: num  47 46 58 64 62 53 69 58 58 57 ...
+ $ bmi   : num  5.22 11.5 6.44 16 6.89 ...
+```
+
+---
+
+
+```r
+names(medical_data)
+```
+
+```
+[1] "gender" "height" "weight" "bmi"   
+```
+
+```r
+nrow(medical_data)
+```
+
+```
+[1] 120
+```
+
+```r
+ncol(medical_data)
+```
+
+```
+[1] 4
+```
+
+```r
+dim(medical_data)
+```
+
+```
+[1] 120   4
+```
+---
+
+
+```r
+View(medical_data)
+```
+&lt;img src="images/view.png" width="60%" height="95%" /&gt;
+---
+layout: false
+
+### Descriptive statistics
+
+#### Example 1
+
+
+```r
+summary(medical_data)
+```
+
+```
+    gender       height          weight           bmi        
+ Female:61   Min.   :1.000   Min.   :37.00   Min.   : 2.375  
+ Male  :59   1st Qu.:2.000   1st Qu.:50.00   1st Qu.: 6.333  
+             Median :2.000   Median :56.00   Median :11.000  
+             Mean   :2.433   Mean   :55.58   Mean   :12.384  
+             3rd Qu.:3.000   3rd Qu.:62.00   3rd Qu.:14.312  
+             Max.   :4.000   Max.   :78.00   Max.   :63.000  
+```
+--
+
+
+```r
+summary(iris)
+```
+
+```
+  Sepal.Length    Sepal.Width     Petal.Length    Petal.Width   
+ Min.   :4.300   Min.   :2.000   Min.   :1.000   Min.   :0.100  
+ 1st Qu.:5.100   1st Qu.:2.800   1st Qu.:1.600   1st Qu.:0.300  
+ Median :5.800   Median :3.000   Median :4.350   Median :1.300  
+ Mean   :5.843   Mean   :3.057   Mean   :3.758   Mean   :1.199  
+ 3rd Qu.:6.400   3rd Qu.:3.300   3rd Qu.:5.100   3rd Qu.:1.800  
+ Max.   :7.900   Max.   :4.400   Max.   :6.900   Max.   :2.500  
+       Species  
+ setosa    :50  
+ versicolor:50  
+ virginica :50  
+                
+                
+                
+```
+
+---
+## Using built-in datasets in R
+
+.w-100.lh-copy[
+There are several ways to find the included datasets in R. Using `data()` will give you a list of all the datasets in your R environment. 
+]
+
+--
+
+For example:
+
+
+```r
+data()
+```
+--
+
+.w-100.lh-copy[
+You can also select a dataset by using `datasets::dataset_name`. In this case, I chose airquality.
+]
+
+
+```r
+airquality_data &lt;- datasets::airquality
+```
+--
+
+
+```r
+head(airquality_data)
+```
+
+```
+  Ozone Solar.R Wind Temp Month Day
+1    41     190  7.4   67     5   1
+2    36     118  8.0   72     5   2
+3    12     149 12.6   74     5   3
+4    18     313 11.5   62     5   4
+5    NA      NA 14.3   56     5   5
+6    28      NA 14.9   66     5   6
+```
+
+
+---
+
+To get help for the proper description of the dataset, use `?airquality`
+
+
+```r
+?airquality
+```
+--
+
+### Other example
+
+
+```r
+iris_data &lt;- datasets::iris
+```
+--
+
+
+```r
+head(iris_data)
+```
+
+```
+  Sepal.Length Sepal.Width Petal.Length Petal.Width Species
+1          5.1         3.5          1.4         0.2  setosa
+2          4.9         3.0          1.4         0.2  setosa
+3          4.7         3.2          1.3         0.2  setosa
+4          4.6         3.1          1.5         0.2  setosa
+5          5.0         3.6          1.4         0.2  setosa
+6          5.4         3.9          1.7         0.4  setosa
+```
+
+--
+
+```r
+tail(iris_data, 4)
+```
+
+```
+    Sepal.Length Sepal.Width Petal.Length Petal.Width   Species
+147          6.3         2.5          5.0         1.9 virginica
+148          6.5         3.0          5.2         2.0 virginica
+149          6.2         3.4          5.4         2.3 virginica
+150          5.9         3.0          5.1         1.8 virginica
+```
+
+---
+layout: true
+# Subsetting data frame
+
+---
+.w-100.lh-copy[
+Every column in a data frame has a name and if you can recall, we can print the names attribute of a data frame (i.e. `iris`) by using:
+]
+
+--
+
+
+```r
+names(iris)
+```
+
+```
+[1] "Sepal.Length" "Sepal.Width"  "Petal.Length" "Petal.Width"  "Species"     
+```
+
+--
+
+.w-100.lh-copy[
+and to access a specific column in a data frame by name, you will use the `$` operator in the form of `df$colname`, where `df` is the name of the data frame and `colname` is the name of the column you are interested in. This operation will then return the column you want as a vector.
+
+Please note that `$` only extracts by name and has a little less typing.                                                      
+]
+
+---
+
+### Example 1
+
+Use the `$` operator to get a vector of `Sepal.Length` from the `iris` data frame:
+
+--
+
+
+```r
+iris$Sepal.Length
+```
+
+```
+  [1] 5.1 4.9 4.7 4.6 5.0 5.4 4.6 5.0 4.4 4.9 5.4 4.8 4.8 4.3 5.8 5.7 5.4 5.1
+ [19] 5.7 5.1 5.4 5.1 4.6 5.1 4.8 5.0 5.0 5.2 5.2 4.7 4.8 5.4 5.2 5.5 4.9 5.0
+ [37] 5.5 4.9 4.4 5.1 5.0 4.5 4.4 5.0 5.1 4.8 5.1 4.6 5.3 5.0 7.0 6.4 6.9 5.5
+ [55] 6.5 5.7 6.3 4.9 6.6 5.2 5.0 5.9 6.0 6.1 5.6 6.7 5.6 5.8 6.2 5.6 5.9 6.1
+ [73] 6.3 6.1 6.4 6.6 6.8 6.7 6.0 5.7 5.5 5.5 5.8 6.0 5.4 6.0 6.7 6.3 5.6 5.5
+ [91] 5.5 6.1 5.8 5.0 5.6 5.7 5.7 6.2 5.1 5.7 6.3 5.8 7.1 6.3 6.5 7.6 4.9 7.3
+[109] 6.7 7.2 6.5 6.4 6.8 5.7 5.8 6.4 6.5 7.7 7.7 6.0 6.9 5.6 7.7 6.3 6.7 7.2
+[127] 6.2 6.1 6.4 7.2 7.4 7.9 6.4 6.3 6.1 7.7 6.3 6.4 6.0 6.9 6.7 6.9 5.8 6.8
+[145] 6.7 6.7 6.3 6.5 6.2 5.9
+```
+
+---
+
+### Example 2
+
+Use the `$` operator to get a vector of `Species` from the `iris` data frame:
+
+--
+
+
+```r
+iris$Species
+```
+
+```
+  [1] setosa     setosa     setosa     setosa     setosa     setosa    
+  [7] setosa     setosa     setosa     setosa     setosa     setosa    
+ [13] setosa     setosa     setosa     setosa     setosa     setosa    
+ [19] setosa     setosa     setosa     setosa     setosa     setosa    
+ [25] setosa     setosa     setosa     setosa     setosa     setosa    
+ [31] setosa     setosa     setosa     setosa     setosa     setosa    
+ [37] setosa     setosa     setosa     setosa     setosa     setosa    
+ [43] setosa     setosa     setosa     setosa     setosa     setosa    
+ [49] setosa     setosa     versicolor versicolor versicolor versicolor
+ [55] versicolor versicolor versicolor versicolor versicolor versicolor
+ [61] versicolor versicolor versicolor versicolor versicolor versicolor
+ [67] versicolor versicolor versicolor versicolor versicolor versicolor
+ [73] versicolor versicolor versicolor versicolor versicolor versicolor
+ [79] versicolor versicolor versicolor versicolor versicolor versicolor
+ [85] versicolor versicolor versicolor versicolor versicolor versicolor
+ [91] versicolor versicolor versicolor versicolor versicolor versicolor
+ [97] versicolor versicolor versicolor versicolor virginica  virginica 
+[103] virginica  virginica  virginica  virginica  virginica  virginica 
+[109] virginica  virginica  virginica  virginica  virginica  virginica 
+[115] virginica  virginica  virginica  virginica  virginica  virginica 
+[121] virginica  virginica  virginica  virginica  virginica  virginica 
+[127] virginica  virginica  virginica  virginica  virginica  virginica 
+[133] virginica  virginica  virginica  virginica  virginica  virginica 
+[139] virginica  virginica  virginica  virginica  virginica  virginica 
+[145] virginica  virginica  virginica  virginica  virginica  virginica 
+Levels: setosa versicolor virginica
+```
+
+---
+.w-100.lh-copy[
+Because the `$` operator returns a vector, you can easily calculate descriptive statistics on columns of a data frame by applying your favorite vector function (like `mean()`, `sd()`, or `table()`) to a column using `$`. 
+]
+
+--
+
+.w-100.lh-copy[
+Let’s calculate the mean of `Sepal.Length` with `mean()` and the frequency of each `Species` with `table()`in the iris data frame:
+]
+
+
+```r
+mean(iris$Sepal.Length)
+```
+
+```
+[1] 5.843333
+```
+
+```r
+table(iris$Species)
+```
+
+```
+
+    setosa versicolor  virginica 
+        50         50         50 
+```
+
+---
+layout: true
+
+## Slicing data frame with [ , ]
+
+---
+
+.w-100.lh-copy[
+Just like a matrix, you can access specific data in a data frame by using square brackets `[ , ]`. To do this, we use the notation `data[rows, cols]`, where rows and columns are vectors of integers.
+]
+
+### Example
+
+&lt;table&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt; data frame slicing &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Interpretation &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; data[1,  ] &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; first row and all columns &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; data[ , 2] &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; all rows and second column &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; data[c(1, 3, 5),  2] &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; row 1, 3, 5 and column 2 only &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; data[1:3, c(1, 3)] &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; first three rows and columns 1 and 3 only &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; data or data[ ,  ] &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; all rows and all columns &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;br&gt;
+
+---
+
+Consider the `airquality` built-in dataset in R.
+
+- Examine the `airquality` dataset 
+
+- Select the first three columns of the dataset
+
+- Select rows `1-3` and columns `1` and `3` of the dataset
+
+- Select rows `1` through `5`, and column `1` of the dataset
+
+- Select the `1st` row (and all columns) of the dataset.
+
+- Select the first `6` rows and all columns of the dataset
+
+---
+layout: false
+
+### Examine the dataset
+
+
+```r
+airquality &lt;- airquality
+
+head(airquality)
+```
+
+```
+  Ozone Solar.R Wind Temp Month Day
+1    41     190  7.4   67     5   1
+2    36     118  8.0   72     5   2
+3    12     149 12.6   74     5   3
+4    18     313 11.5   62     5   4
+5    NA      NA 14.3   56     5   5
+6    28      NA 14.9   66     5   6
+```
+
+```r
+names(airquality)
+```
+
+```
+[1] "Ozone"   "Solar.R" "Wind"    "Temp"    "Month"   "Day"    
+```
+
+```r
+str(airquality)
+```
+
+```
+'data.frame':	153 obs. of  6 variables:
+ $ Ozone  : int  41 36 12 18 NA 28 23 19 8 NA ...
+ $ Solar.R: int  190 118 149 313 NA NA 299 99 19 194 ...
+ $ Wind   : num  7.4 8 12.6 11.5 14.3 14.9 8.6 13.8 20.1 8.6 ...
+ $ Temp   : int  67 72 74 62 56 66 65 59 61 69 ...
+ $ Month  : int  5 5 5 5 5 5 5 5 5 5 ...
+ $ Day    : int  1 2 3 4 5 6 7 8 9 10 ...
+```
+
+---
+### Select the first three columns of the dataset
+
+
+```r
+airquality[, 1:3] # Extract columns by position
+```
+
+```
+    Ozone Solar.R Wind
+1      41     190  7.4
+2      36     118  8.0
+3      12     149 12.6
+4      18     313 11.5
+5      NA      NA 14.3
+6      28      NA 14.9
+7      23     299  8.6
+8      19      99 13.8
+9       8      19 20.1
+10     NA     194  8.6
+11      7      NA  6.9
+12     16     256  9.7
+13     11     290  9.2
+14     14     274 10.9
+15     18      65 13.2
+16     14     334 11.5
+17     34     307 12.0
+18      6      78 18.4
+19     30     322 11.5
+20     11      44  9.7
+21      1       8  9.7
+22     11     320 16.6
+23      4      25  9.7
+24     32      92 12.0
+25     NA      66 16.6
+26     NA     266 14.9
+27     NA      NA  8.0
+28     23      13 12.0
+29     45     252 14.9
+30    115     223  5.7
+31     37     279  7.4
+32     NA     286  8.6
+33     NA     287  9.7
+34     NA     242 16.1
+35     NA     186  9.2
+36     NA     220  8.6
+37     NA     264 14.3
+38     29     127  9.7
+39     NA     273  6.9
+40     71     291 13.8
+41     39     323 11.5
+42     NA     259 10.9
+43     NA     250  9.2
+44     23     148  8.0
+45     NA     332 13.8
+46     NA     322 11.5
+47     21     191 14.9
+48     37     284 20.7
+49     20      37  9.2
+50     12     120 11.5
+51     13     137 10.3
+52     NA     150  6.3
+53     NA      59  1.7
+54     NA      91  4.6
+55     NA     250  6.3
+56     NA     135  8.0
+57     NA     127  8.0
+58     NA      47 10.3
+59     NA      98 11.5
+60     NA      31 14.9
+61     NA     138  8.0
+62    135     269  4.1
+63     49     248  9.2
+64     32     236  9.2
+65     NA     101 10.9
+66     64     175  4.6
+67     40     314 10.9
+68     77     276  5.1
+69     97     267  6.3
+70     97     272  5.7
+71     85     175  7.4
+72     NA     139  8.6
+73     10     264 14.3
+74     27     175 14.9
+75     NA     291 14.9
+76      7      48 14.3
+77     48     260  6.9
+78     35     274 10.3
+79     61     285  6.3
+80     79     187  5.1
+81     63     220 11.5
+82     16       7  6.9
+83     NA     258  9.7
+84     NA     295 11.5
+85     80     294  8.6
+86    108     223  8.0
+87     20      81  8.6
+88     52      82 12.0
+89     82     213  7.4
+90     50     275  7.4
+91     64     253  7.4
+92     59     254  9.2
+93     39      83  6.9
+94      9      24 13.8
+95     16      77  7.4
+96     78      NA  6.9
+97     35      NA  7.4
+98     66      NA  4.6
+99    122     255  4.0
+100    89     229 10.3
+101   110     207  8.0
+102    NA     222  8.6
+103    NA     137 11.5
+104    44     192 11.5
+105    28     273 11.5
+106    65     157  9.7
+107    NA      64 11.5
+108    22      71 10.3
+109    59      51  6.3
+110    23     115  7.4
+111    31     244 10.9
+112    44     190 10.3
+113    21     259 15.5
+114     9      36 14.3
+115    NA     255 12.6
+116    45     212  9.7
+117   168     238  3.4
+118    73     215  8.0
+119    NA     153  5.7
+120    76     203  9.7
+121   118     225  2.3
+122    84     237  6.3
+123    85     188  6.3
+124    96     167  6.9
+125    78     197  5.1
+126    73     183  2.8
+127    91     189  4.6
+128    47      95  7.4
+129    32      92 15.5
+130    20     252 10.9
+131    23     220 10.3
+132    21     230 10.9
+133    24     259  9.7
+134    44     236 14.9
+135    21     259 15.5
+136    28     238  6.3
+137     9      24 10.9
+138    13     112 11.5
+139    46     237  6.9
+140    18     224 13.8
+141    13      27 10.3
+142    24     238 10.3
+143    16     201  8.0
+144    13     238 12.6
+145    23      14  9.2
+146    36     139 10.3
+147     7      49 10.3
+148    14      20 16.6
+149    30     193  6.9
+150    NA     145 13.2
+151    14     191 14.3
+152    18     131  8.0
+153    20     223 11.5
+```
+---
+### Select the first three columns of the dataset
+
+
+```r
+airquality[, c("Ozone", "Solar.R", "Wind")]
+```
+
+```
+    Ozone Solar.R Wind
+1      41     190  7.4
+2      36     118  8.0
+3      12     149 12.6
+4      18     313 11.5
+5      NA      NA 14.3
+6      28      NA 14.9
+7      23     299  8.6
+8      19      99 13.8
+9       8      19 20.1
+10     NA     194  8.6
+11      7      NA  6.9
+12     16     256  9.7
+13     11     290  9.2
+14     14     274 10.9
+15     18      65 13.2
+16     14     334 11.5
+17     34     307 12.0
+18      6      78 18.4
+19     30     322 11.5
+20     11      44  9.7
+21      1       8  9.7
+22     11     320 16.6
+23      4      25  9.7
+24     32      92 12.0
+25     NA      66 16.6
+26     NA     266 14.9
+27     NA      NA  8.0
+28     23      13 12.0
+29     45     252 14.9
+30    115     223  5.7
+31     37     279  7.4
+32     NA     286  8.6
+33     NA     287  9.7
+34     NA     242 16.1
+35     NA     186  9.2
+36     NA     220  8.6
+37     NA     264 14.3
+38     29     127  9.7
+39     NA     273  6.9
+40     71     291 13.8
+41     39     323 11.5
+42     NA     259 10.9
+43     NA     250  9.2
+44     23     148  8.0
+45     NA     332 13.8
+46     NA     322 11.5
+47     21     191 14.9
+48     37     284 20.7
+49     20      37  9.2
+50     12     120 11.5
+51     13     137 10.3
+52     NA     150  6.3
+53     NA      59  1.7
+54     NA      91  4.6
+55     NA     250  6.3
+56     NA     135  8.0
+57     NA     127  8.0
+58     NA      47 10.3
+59     NA      98 11.5
+60     NA      31 14.9
+61     NA     138  8.0
+62    135     269  4.1
+63     49     248  9.2
+64     32     236  9.2
+65     NA     101 10.9
+66     64     175  4.6
+67     40     314 10.9
+68     77     276  5.1
+69     97     267  6.3
+70     97     272  5.7
+71     85     175  7.4
+72     NA     139  8.6
+73     10     264 14.3
+74     27     175 14.9
+75     NA     291 14.9
+76      7      48 14.3
+77     48     260  6.9
+78     35     274 10.3
+79     61     285  6.3
+80     79     187  5.1
+81     63     220 11.5
+82     16       7  6.9
+83     NA     258  9.7
+84     NA     295 11.5
+85     80     294  8.6
+86    108     223  8.0
+87     20      81  8.6
+88     52      82 12.0
+89     82     213  7.4
+90     50     275  7.4
+91     64     253  7.4
+92     59     254  9.2
+93     39      83  6.9
+94      9      24 13.8
+95     16      77  7.4
+96     78      NA  6.9
+97     35      NA  7.4
+98     66      NA  4.6
+99    122     255  4.0
+100    89     229 10.3
+101   110     207  8.0
+102    NA     222  8.6
+103    NA     137 11.5
+104    44     192 11.5
+105    28     273 11.5
+106    65     157  9.7
+107    NA      64 11.5
+108    22      71 10.3
+109    59      51  6.3
+110    23     115  7.4
+111    31     244 10.9
+112    44     190 10.3
+113    21     259 15.5
+114     9      36 14.3
+115    NA     255 12.6
+116    45     212  9.7
+117   168     238  3.4
+118    73     215  8.0
+119    NA     153  5.7
+120    76     203  9.7
+121   118     225  2.3
+122    84     237  6.3
+123    85     188  6.3
+124    96     167  6.9
+125    78     197  5.1
+126    73     183  2.8
+127    91     189  4.6
+128    47      95  7.4
+129    32      92 15.5
+130    20     252 10.9
+131    23     220 10.3
+132    21     230 10.9
+133    24     259  9.7
+134    44     236 14.9
+135    21     259 15.5
+136    28     238  6.3
+137     9      24 10.9
+138    13     112 11.5
+139    46     237  6.9
+140    18     224 13.8
+141    13      27 10.3
+142    24     238 10.3
+143    16     201  8.0
+144    13     238 12.6
+145    23      14  9.2
+146    36     139 10.3
+147     7      49 10.3
+148    14      20 16.6
+149    30     193  6.9
+150    NA     145 13.2
+151    14     191 14.3
+152    18     131  8.0
+153    20     223 11.5
+```
+
+```r
+# Extract columns by name
+```
+
+---
+### Select rows 1-3 and columns 1 and 3
+
+
+```r
+airquality[1:3, c(1, 3)]
+```
+
+```
+  Ozone Wind
+1    41  7.4
+2    36  8.0
+3    12 12.6
+```
+
+--
+
+### Select rows 1 through 5, and column 1
+
+
+```r
+airquality[1:5, 1]
+```
+
+```
+[1] 41 36 12 18 NA
+```
+--
+
+or 
+
+
+```r
+airquality$Ozone[1:5]
+```
+
+```
+[1] 41 36 12 18 NA
+```
+
+
+---
+
+### Select the first row and all columns of the dataset
+
+
+```r
+airquality[1, ]
+```
+
+```
+  Ozone Solar.R Wind Temp Month Day
+1    41     190  7.4   67     5   1
+```
+--
+
+### Select the first 6 rows and all columns of the dataset
+
+
+```r
+airquality[1:6, ]
+```
+
+```
+  Ozone Solar.R Wind Temp Month Day
+1    41     190  7.4   67     5   1
+2    36     118  8.0   72     5   2
+3    12     149 12.6   74     5   3
+4    18     313 11.5   62     5   4
+5    NA      NA 14.3   56     5   5
+6    28      NA 14.9   66     5   6
+```
+---
+
+### Select the first 6 rows and all columns of the dataset
+
+We can also do this by using `head()`
+
+
+```r
+head(airquality, 6)
+```
+
+```
+  Ozone Solar.R Wind Temp Month Day
+1    41     190  7.4   67     5   1
+2    36     118  8.0   72     5   2
+3    12     149 12.6   74     5   3
+4    18     313 11.5   62     5   4
+5    NA      NA 14.3   56     5   5
+6    28      NA 14.9   66     5   6
+```
+
+---
+layout: true
+
+## Missing values 
+
+---
+.w-100.lh-copy[
+When there is a missing value in any object, R indicates such as `NA`. In real datasets, `NA` values turn up all the time. The command `anyNA()` returns `TRUE` if there is any presence of `NA` and `FALSE` if otherwise.
+]
+
+--
+
+**Examples**
+
+
+```r
+gender &lt;- c("Female", "Male", NA, "Male", NA, "Female")
+
+anyNA(gender)
+```
+
+```
+[1] TRUE
+```
+--
+
+
+```r
+mat &lt;- matrix(c(2, 3, 1, 1, NA, 0), nrow = 2, ncol = 3, byrow = TRUE)
+
+anyNA(mat)
+```
+
+```
+[1] TRUE
+```
+
+
+```r
+anyNA(iris)
+```
+
+```
+[1] FALSE
+```
+
+---
+
+.w-100.lh-copy[
+To get the total number of missing values in a data frame, we shall use the command `sum(is.na(dataframe))`
+where `is.na(dataframe)` create a logical value `TRUE/FALSE` where there is a presence/absence of a missing value in each column of the data frame.
+]
+
+--
+.pull-left[
+
+#### Example 1
+
+
+```r
+sum(is.na(airquality))
+```
+
+```
+[1] 44
+```
+]
+
+--
+
+.pull-right[
+#### Example 2
+
+
+```r
+sum(is.na(iris))
+```
+
+```
+[1] 0
+```
+]
+
+--
+.w-100.lh-copy[
+The `inspectdf::inspect_na(dataframe_name)` will help you get the number of missing values in each of the columns of the data frame. Please make sure you install `inspectdf` package.
+]
+
+
+
+---
+.w-100.lh-copy[
+When there is a presence of `NA` in the data, most descriptive statistics functions such as `min()`, `max()`, `mean()`, and `sd()` will return `NA`.
+]
+
+--
+
+### Examples
+
+
+```r
+covid_confirmed &lt;- c(2, 3, 1, 1, NA, 3)
+```
+--
+
+
+```r
+min(covid_confirmed)
+```
+
+```
+[1] NA
+```
+--
+
+
+```r
+sum(covid_confirmed)
+```
+
+```
+[1] NA
+```
+
+--
+
+
+```r
+mean(covid_confirmed)
+```
+
+```
+[1] NA
+```
+
+---
+.w-100.lh-copy[
+To tell a descriptive statistic function to ignore missing (`NA`) values, you will include the argument `na.rm = TRUE` in the function. This argument explicitly tells the function to ignore `NA` values before it can work.
+]
+
+--
+
+### Examples
+
+
+```r
+covid_confirmed &lt;- c(2, 3, 1, 1, NA, 3)
+```
+
+--
+
+
+```r
+min(covid_confirmed, na.rm = TRUE)
+```
+
+```
+[1] 1
+```
+
+```r
+sum(covid_confirmed, na.rm = TRUE)
+```
+
+```
+[1] 10
+```
+
+```r
+mean(covid_confirmed, na.rm = TRUE)
+```
+
+```
+[1] 2
+```
+
+---
+class: center, middle, inverse
+name: list
+layout: false
+
+# List
+
+---
+
+# List
+
+.w-100.lh-copy[
+A list in **R** allows you to gather a variety of objects under one name (that is, the name of the list) in an ordered way. These objects can be `matrices`, `vectors`, `dataframes`, even `other lists`. It is not even required that these objects are related to each other in any way.
+You can create a list by using the function `list()`. Arguments (`args`) to the list function are the list components. Remember, these components can be `vector`, `matrices`, `data.frame`, or `other list`.
+]
+
+--
+
+### Example 1
+
+
+```r
+my_list &lt;- list(age = 19, gender = "male", pass = TRUE)
+```
+
+--
+
+.w-100.lh-copy[
+The object `my_list` is formed by three components. One is a `numeric` with the name `age`, the second is a `character` with the name
+`gender`, and the third is `logical` with name `pass`.
+]
+
+---
+layout: true
+
+## Extracting individual component in a list
+
+---
+
+--
+
+.w-100.lh-copy[
+To show the contents of a list you simply type its name as any other object in R:
+]
+
+--
+
+
+```r
+my_list
+```
+
+```
+$age
+[1] 19
+
+$gender
+[1] "male"
+
+$pass
+[1] TRUE
+```
+
+--
+
+.w-100.lh-copy[
+You can extract individual element in a list by using double square brackets `[[]]` e.g. `my_list[[1]]`, `my_list[[2]]`, etc.
+]
+
+---
+layout: false
+### Examples
+
+
+```r
+my_list[[1]]
+```
+
+```
+[1] 19
+```
+
+```r
+my_list[[2]]
+```
+
+```
+[1] "male"
+```
+
+```r
+my_list[[3]]
+```
+
+```
+[1] TRUE
+```
+
+---
+
+.w-100.lh-copy[
+You may have noticed that we have used double square brackets. If we had used `my_lst[1]` instead, we would obtain a different result:
+]
+
+--
+
+
+```r
+my_list[1]
+```
+
+```
+$age
+[1] 19
+```
+
+```r
+my_list[2]
+```
+
+```
+$gender
+[1] "male"
+```
+
+--
+
+.w-100.lh-copy[
+This latter notation extracts a sub-list formed by the first and second component of `my_list`. On the contrary, `my_list[[1]]` extracts the value of the first component (in this case, a `numeric`), which is not a list anymore, as you can confirm by the following:
+]
+
+--
+
+
+```r
+class(my_list[[1]])
+```
+
+```
+[1] "numeric"
+```
+
+```r
+class(my_list[1])
+```
+
+```
+[1] "list"
+```
+---
+
+### Important note
+
+.w-100.lh-copy[
+While extracting individual element/component of a list, it is important to note that R will throw an error indicating **subscript out of bounds** if index does not exist in the named list i.e.
+]
+--
+
+
+```r
+my_list[[4]]
+```
+
+```
+Error in my_list[[4]]: subscript out of bounds
+```
+
+```r
+my_list[4]
+```
+
+```
+$&lt;NA&gt;
+NULL
+```
+
+---
+
+### Example 2
+
+Consider the following list:
+
+```r
+list_example &lt;- list(
+  age = c(18, 21, 33, 25, 19), unit_mat = matrix(c(1, 0, 0, 1), nrow = 2, ncol = 2),
+  iris_data = iris
+)
+```
+--
+
+The components in this list are `vector`, `matrix`, and `data.frame`.
+
+--
+
+Another way of extracting component in the `list` is by using a dollar sign, `$`. 
+--
+For example:
+
+--
+
+
+```r
+list_example$age
+```
+
+```
+[1] 18 21 33 25 19
+```
+
+```r
+list_example$unit_mat
+```
+
+```
+     [,1] [,2]
+[1,]    1    0
+[2,]    0    1
+```
+---
+
+### Exercise
+
+
+```r
+list_example &lt;- list(
+  age = c(18, 21, 33, 25, 19),
+  unit_mat = matrix(c(1, 0, 0, 1), nrow = 2, ncol = 2),
+  iris_data = iris
+)
+```
+
+
+How would you extract the component `iris_data` from the `list_example`?
+
+
+.can-edit[
+
+]
+
+
+<div class="countdown" id="timer_60d90659" style="right:0;bottom:0;" data-warnwhen="0">
+<code class="countdown-time"><span class="countdown-digits minutes">01</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
+</div>
+
+
+---
+class: center, middle, inverse
+name: function
+layout: false
+
+# Write your own function in R
+
+&lt;img src="images/fun.png" width="60%" height="55%" /&gt;
+---
+class: middle
+
+## Functions
+
+.w-100.lh-copy[
+R function is a reusable code that is used to perform a single and related action. It is a piece of code that runs when it is called or referenced. R provides many inbuilt functions such as `c()`, `anyNA()`, `print()`, `class()`, `length()`, etc. but it also gives freedom to create your own functions.
+]
+
+--
+
+.w-100.lh-copy[
+Functions usually take in some sort of data structure (`value`, `vector`, `dataframe`, etc.) as an `argument`, process it, and return a result.
+]
+
+
+---
+
+## Types of Functions
+
+.w-100.lh-copy[
+Function extends the functionality of **R**. Basically, we can categorize functions into the following two types:
+]
+
+
+--
+
+&lt;img src="images/fun1.png" width="713" style="display: block; margin: auto;" /&gt;
+
+--
+
+- **Built-in functions**: Functions that are pre-defined in R
+
+--
+
+- **User-defined functions**: Functions defined by the users themselves
+
+---
+
+### Advantages of user-defined functions
+
+--
+
+.w-100.lh-copy[
+Function allows us to automate repetitive tasks in a more powerful way than copy-and-pasting. Writing a function has the following advantages:
+
+- You can give a function a name that makes your code easier to understand and remember.
+ 	
+- As something changes, you only need to update code in one place, instead of many places.
+ 	
+- it avoids repetition and makes the code reusable.
+
+- Improves maintainability of the code.
+]
+
+--
+
+### When should you write a function?
+
+--
+
+.w-100.lh-copy[
+You should consider writing a function whenever you have copied and pasted a block of code more than two times.
+]
+
+---
+
+## Structure of a user-defined function
+
+There are three key steps to creating a new function:
+
+.w-100.lh-copy[
+- A function name i.e. `square_it`
+
+- A list of function `inputs` or `arguments`, inside the `function()`. For example, `function(x, y)`.
+
+- The R codes that use those arguments are wrapped between the curly brackets. For example, what do you want the function to do with the inputs? Create a plot? Calculate a statistic? Run a regression analysis? This is where you’ll write all the real R code behind the function.
+]
+
+
+```r
+name &lt;- function(variables) {
+
+
+
+}
+```
+
+---
+### Structure of a user-defined function
+
+The structure of a function is given below:
+
+
+```r
+name_of_function &lt;- function(argument1, argument2) {
+    
+  statements or code that does something
+    
+  return(something)
+}
+```
+
+.w-100.lh-copy[
+
+The argument(s) can be any type of object (like a `scalar`, a `matrix`, a `dataframe`, a `vector`, a `logical`, etc), and it’s not necessary to define what it is in any way.
+]
+
+--
+
+.w-100.lh-copy[
+
+If you save an object inside a function, then you need to return it by using the `return()` function before that function can bring the output.
+]
+
+--
+
+### Calling a user-defined function in R
+
+.w-100.lh-copy[
+You can call a user defined function like other in-built functions by its name. If the function accepts parameters or arguments, you will pass them while calling the function.
+]
+
+---
+### Example 1
+
+.w-100.lh-copy[
+Let's create a simple function. This function will take in a numeric value as input, and return the square of it.
+]
+
+--
+
+
+```r
+square_it &lt;- function(x) {
+  square &lt;- x^2
+
+  return(square)
+}
+```
+--
+
+.w-100.lh-copy[
+We will use this function to get the square of:
+
+- 12
+- 6
+]
+
+--
+
+.w-100.lh-copy[
+We type out the name of the function, and inside the parentheses we provide a numeric value x.
+]
+
+--
+
+.pull-left[
+
+```r
+square_it(12)
+```
+
+```
+[1] 144
+```
+]
+
+--
+
+.pull-right[
+
+```r
+square_it(x = 6)
+```
+
+```
+[1] 36
+```
+]
+
+
+
+---
+### Example 2
+
+.w-100.lh-copy[
+Write a function that takes any `object` as an input, and return `TRUE` if there is any missing value and also print their total number.]
+
+--
+Use this function to check and print the number of `NA` in:
+
+--
+- `airquality`
+
+--
+
+- `iris`
+
+--
+
+- `covid_confirmed &lt;- c(31, 30, 37, 25, NA, 34, 26, NA, 23, 45)`
+
+--
+
+-  `A &lt;- matrix(c(1, NA, 5, NA, 9, 0, 5, 4, NA), nrow = 3, ncol = 3, byrow = FALSE)`
+
+--
+
+
+```r
+check_NA &lt;- function(tbl) {
+  cat(anyNA(tbl), ",", sum(is.na(tbl)))
+}
+```
+---
+class: middle
+
+### Example 2
+
+
+```r
+check_NA &lt;- function(tbl) {
+  cat(anyNA(tbl), ",", sum(is.na(tbl)))
+}
+```
+--
+
+.pull-left[
+
+```r
+check_NA(airquality)
+```
+
+```
+TRUE , 44
+```
+]
+
+--
+
+.pull-right[
+
+```r
+check_NA(iris)
+```
+
+```
+FALSE , 0
+```
+]
+
+--
+
+
+```r
+covid_confirmed &lt;- c(31, 30, 37, 25, NA, 34, 26, NA, 23, 45)
+
+covid_confirmed
+```
+
+```
+ [1] 31 30 37 25 NA 34 26 NA 23 45
+```
+
+```r
+check_NA(covid_confirmed)
+```
+
+```
+TRUE , 2
+```
+---
+class: middle
+
+### Example 2
+
+
+
+```r
+check_NA &lt;- function(tbl) {
+  cat(anyNA(tbl), ",", sum(is.na(tbl)))
+}
+```
+
+--
+
+
+```r
+A &lt;- matrix(c(1, NA, 5, NA, 9, 0, 5, 4, NA), nrow = 3, ncol = 3, byrow = FALSE)
+
+A
+```
+
+```
+     [,1] [,2] [,3]
+[1,]    1   NA    5
+[2,]   NA    9    4
+[3,]    5    0   NA
+```
+
+```r
+check_NA(A)
+```
+
+```
+TRUE , 3
+```
+
+---
+### Exercise
+
+Write a function to convert to `Fahrenheit`, a temperature given in degree `Celsius`.
+
+You can use this formula:
+
+`Tc ∗ 1.8 + 32`
+
+where `Tc` is the Celsius degree to be converted.
+
+Use your function to convert the following `Celsius` to `Fahrenheit`:
+
+-	100
+
+-	75
+
+-	120
+
+
+<div class="countdown" id="timer_60d9049c" style="right:0;bottom:0;" data-warnwhen="0">
+<code class="countdown-time"><span class="countdown-digits minutes">03</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
+</div>
+
+
+.can-edit[
+
+]
+
+---
+class: center, middle
+
+## Summary
+
+.left[
+.w-100.lh-copy[
+This tutorial introduced you to `R` programming fundamentals. 
+
+In this tutorial, you have learnt that:
+
+1. arithmetic operators include `+`, `-`, `/`, `*`, `^`, `%%`, and `()`
+
+2. R makes use of `#` to make a comment
+
+3. 	Comparison operators include `==`, `!=`, `&gt;`, `&lt;`, `&gt;=`,  and `&lt;=`.
+
+4. Atomic data type includes `numeric`, `character`, `logical`, and `factor`
+
+5. R data structure includes `vector`, `matrix`, `dataframe`, and `list`
+
+6. R has built-in functions and user-defined functions
+
+7. Built-in functions also known as base functions includes `print()`, `getwd()`, and `cat()`.
+]
+]
+
+---
+class: center, middle, inverse
+
+# The end
+
+--
+
+**Thank you**
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"highlightSpans": true,
+"countIncrementalSlides": false,
+"slideNumberFormat": "%current%"
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
