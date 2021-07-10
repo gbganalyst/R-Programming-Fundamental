@@ -48,7 +48,7 @@ use_webcam(width = 150, height = 150)
 use_extra_styles()
 ```
 
-background-image: url(images/gbg.jpg), url(images/R_logo.png)
+background-image: url(images/gbg.png), url(images/R_logo.png)
 background-position: 0% 100%, 100% 0%
 background-size: 40%, 10%
 
@@ -58,7 +58,7 @@ class: title-page, center, middle
 
 ```{r, echo=FALSE}
 use_logo(
-  image_url = "images/gbg.jpg",
+  image_url = "images/gbg.png",
   link_url = "https://bit.ly/gbganalyst",
   position = xaringanExtra::css_position(top = "1em", right = "1em"),
   exclude_class = c("title-page", "inverse", "hide_logo")
@@ -82,41 +82,6 @@ class: about-me-slide, inverse, middle, center
 [`r icons::fontawesome("link")` https://bit.ly/gbganalyst](https://bit.ly/gbganalyst)
 [`r icons::fontawesome("twitter")` @gbganalyst](https://twitter.com/gbganalyst)
 [`r icons::icon_style(icons::fontawesome("github"), scale = 1)` @gbganalyst](https://github.com/gbganalyst)
-
-???
-
-class: about-me-slide, inverse, middle, center
-
-## About the trainer
-
-<img style="border-radius: 80%;" src="images/abono.jpg" width="180px"/>
-
-### Olanrewaju Ahmed Babajide
-
-#### Principal System Analyst, Data Scientist
-
-.fade[University of Ibadan<br>Oyo, Nigeria]
-
-[`r icons::fontawesome("link")` https://ui.edu.ng/ABOlanrewaju](https://ui.edu.ng/ABOlanrewaju)
-[`r icons::fontawesome("twitter")` @abono2000](https://twitter.com/abono2000)
-[`r icons::icon_style(icons::fontawesome("github"), scale = 1)` @abono2000](https://github.com/abono2000)
-
-???
-
-class: about-me-slide, inverse, middle, center
-
-## About the trainer
-
-<img style="border-radius: 80%;" src="images/prof_kay.jpeg" width="180px"/>
-
-### Ogunyemi Olakunle Joshua
-
-#### Data Scientist
-
-.fade[TAG NG<br>Lagos, Nigeria]
-
-[`r icons::fontawesome("twitter")` @olakunle4impact](https://twitter.com/olakunle4impact)
-
 
 ---
 class: middle
@@ -146,6 +111,7 @@ name: toc
 
 # Table of content
 
+.pull-left[
 .w-100.lh-copy[
 
 - [History and Overview of R](#hist)
@@ -153,12 +119,20 @@ name: toc
 - [R for Data Science](#r4ds)
 
 - [R as a Calculator](#cal)
+]
+]
+
+--
+
+.pull-right[
+.w-100.lh-copy[
 
 - [Atomic Data Type and Variable Assignment in R](#var)
 
 - [Basic Data Structure in R](#basic)
 
 - [Write your own function in R](#function)
+]
 ]
 
 ---
@@ -3079,7 +3053,7 @@ You can call a user defined function like other in-built functions by its name. 
 ### Example 1
 
 .w-100.lh-copy[
-Let's create a simple function. This function will take in a numeric value as input, and return the square of it.
+Let's create a simple function. This function will take in a numeric value as `input`, and return the square of it.
 ]
 
 --
@@ -3105,7 +3079,7 @@ We will use this function to get the square of:
 --
 
 .w-100.lh-copy[
-We type out the name of the function, and inside the parentheses we provide a numeric value x.
+We type out the name of the function, and inside the parentheses we provide a numeric value `x`.
 ]
 
 --
@@ -3218,7 +3192,8 @@ check_NA(A)
 ```
 
 ---
-### Exercise
+
+### Exercise 1: Temperature conversion
 
 Write a function to convert to `Fahrenheit`, a temperature given in degree `Celsius`.
 
@@ -3245,6 +3220,52 @@ countdown(minutes = 3)
 .can-edit[
 
 ]
+
+
+---
+### Exercise 2: Pythagoras theorem
+
+.pull-left[
+
+```{r, out.width= "60%", out.height="60%", echo=FALSE, fig.align='center'}
+knitr::include_graphics("images/triangle.png")
+```
+]
+
+--
+
+.pull-right[
+.w-100.lh-copy[
+Write a function called `pythagoras` to solve for a hypotenuse side (`c`) using Pythagoras theorem:
+
+$$c = \sqrt{a^2 + b^2}$$
+]
+]
+
+--
+.w-100.lh-copy[
+where `a` and `b` are the opposite and adjacent sides of a right angled triangle.
+]
+
+--
+
+.w-100.lh-copy[
+Use your function, `pythagoras`, to get a hypotenuse side for the following triangles:
+
+-	`a = 4.1`, `b = 2.6`
+
+-	`a = 3`, `b = 4`
+]
+
+```{r, echo=FALSE}
+countdown(minutes = 3)
+```
+
+
+.can-edit[
+
+]
+
 
 ---
 class: center, middle
