@@ -11,7 +11,7 @@
     <script src="libs/xaringanExtra_fit-screen/fit-screen.js"></script>
     <link href="libs/panelset/panelset.css" rel="stylesheet" />
     <script src="libs/panelset/panelset.js"></script>
-    <script type="application/json" id="xaringanExtra-editable-docid">{"id":"c93a29495d9746ed8f6c2c2372f79e70","expires":14}</script>
+    <script type="application/json" id="xaringanExtra-editable-docid">{"id":"d95c26fc12b9424d91adbfa7779d4348","expires":14}</script>
     <script src="libs/himalaya/himalaya.js"></script>
     <script src="libs/js-cookie/js.cookie.js"></script>
     <link href="libs/editable/editable.css" rel="stylesheet" />
@@ -122,7 +122,7 @@ class: middle
 
 Goal:
 
-&gt; The goal of this R workshop is to help you learn the most important skills in R for data science.
+&gt; The goal of this R session is to help you learn the most important skills in R for data science.
 
 
 ]
@@ -219,7 +219,24 @@ Please note that you will need to install `rversions` package before `rversions:
 ---
 ## Why R programming?
 
-&lt;img src="images/learnr.png" width="1547" height="100%" /&gt;
+&lt;img src="images/learnr.png" width="1027" height="100%" /&gt;
+
+---
+
+# LearnR, UseR, and ThinkR
+
+&lt;img src="images/Company_useR.png" width="100%" height="100%" /&gt;
+
+[Companies](https://www.quora.com/Which-companies-use-R) that use R for Analytics
+
+---
+# R Learning Curve
+
+.w-100.lh-copy[
+As many have said, R makes hard things easy. The learning curve for R is pretty steep for a beginner. Though R is a bit difficult in the beginning, data science enthusiasts still prefer to learn it due to the amazing features of R.
+]
+
+&lt;img src="images/R_learning_curve.png" width="85%" height="85%" /&gt;
 
 ---
 background-image:url(images/R.PNG)
@@ -272,6 +289,7 @@ Download R for Mac via this [link](https://cran.r-project.org/bin/macosx/). Plea
 - Open the `.pkg` file and install it.
 
 **For Linux**:
+
 For complete R System installation in Linux, follow the instructions on this
 [link](https://cran.r-project.org/).
 
@@ -282,19 +300,10 @@ For Ubuntu with Apt-get installed, execute `sudo apt-get install r-base` in the 
 .panel[.panel-name[Install RStudio]
 
 .w-100.lh-copy[
-You can install **RStudio** via this [link](https://cran.r-project.org/), choose the appropriate installer file for your operating system, download it, and then run it to install **RStudio**.
+You can install RStudio via this [link](https://www.rstudio.com/products/rstudio/download/#download), choose the appropriate installer file for your operating system, download it, and then run it to install RStudio.
 ]
 ]
 ]
-
----
-# LearnR, UseR, and ThinkR
-
-&lt;img src="images/Company_useR.png" width="100%" height="100%" /&gt;
-
-[Companies](https://www.quora.com/Which-companies-use-R) that use R for Analytics
-
-
 
 ---
 
@@ -316,6 +325,7 @@ Data science is an exciting discipline that allows you to turn raw data into und
 &lt;img src="images/r4ds.JPG" alt="Data Science Phases~Inspired by Hadley" width="100%" /&gt;
 &lt;p class="caption"&gt;Data Science Phases~Inspired by Hadley&lt;/p&gt;
 &lt;/div&gt;
+
 
 --
 
@@ -364,12 +374,15 @@ to navigate through the four windows in Rstudio, use R as a calculator and  assi
 ![](https://media3.giphy.com/media/26h0poAzDM5h8gHWE/giphy.gif)  
 
 ---
+
 ## The four panes of RStudio
 
-&lt;img src="images/RStudio.png" width="1033" /&gt;
+&lt;img src="images/RStudio.png" width="90%" height="85%" /&gt;
+
 --
 
 **Let's open our RStudio!**
+
 ---
 
 class: center, middle, inverse
@@ -390,6 +403,7 @@ following arithmetic operations:
 
 --
 
+.pull-left[
 - Addition (`+`)
 
 - Subtraction (`-`)
@@ -397,12 +411,18 @@ following arithmetic operations:
 - Multiplication (`*`)
 
 - Division (`/`)
+]
+
+--
+
+.pull-right[
 
 - Exponentiation (`^`)
 
 - Modulo (`%%`)
 
 - Parenthesis `()`
+]
 
 ---
 
@@ -969,12 +989,20 @@ class(3 - 6i)
 
 .w-100.lh-copy[
 A variable allows you to store a value (e.g. 5) or an object (e.g. a function
-description) in `R`. You can then later use this variable’s name to easily access the value or the object that is stored with it. You can create a variable with the help of an **assignment operator** `&lt;-` or `=`. 
+description) in `R`. You can then later use this variable’s name to easily access the value or the object that is stored with it. 
 ]
+
+--
+
+.w-100.lh-copy[
+You can create a variable with the help of an **assignment operator** `&lt;-` or `=`. 
+]
+
+--
+
 
 ### Examples
 
---
 
 .pull-left[
 
@@ -1100,7 +1128,6 @@ smile_face &lt;- TRUE
 
 ]
 
-
 ---
 
 ## Rules for naming variables
@@ -1114,6 +1141,8 @@ smile_face &lt;- TRUE
 * R is case sensitive. Uppercase characters are different from lowercase characters.
 ]
 
+--
+
 &lt;table&gt;
  &lt;thead&gt;
   &lt;tr&gt;
@@ -1123,8 +1152,8 @@ smile_face &lt;- TRUE
  &lt;/thead&gt;
 &lt;tbody&gt;
   &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; test.grade &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; test(grade) &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; health.status &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; health(status) &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
    &lt;td style="text-align:left;"&gt; covid_19_cases &lt;/td&gt;
@@ -1202,7 +1231,7 @@ smile_face &lt;- "FALSE"
 
 
 
-<div class="countdown" id="timer_60ea142d" style="right:0;bottom:0;" data-warnwhen="0">
+<div class="countdown" id="timer_6276abf8" style="right:0;bottom:0;" data-warnwhen="0">
 <code class="countdown-time"><span class="countdown-digits minutes">00</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">42</span></code>
 </div>
 
@@ -1510,54 +1539,6 @@ class(month)
 [1] "character"
 ```
 ---
-
-
-```r
-diabetic_status &lt;- c(TRUE, FALSE, FALSE, TRUE, FALSE, TRUE)
-
-class(diabetic_status)
-```
-
-```
-[1] "logical"
-```
---
-
-
-```r
-complex_vector &lt;- c(2 + 1i, 3 - 2i, 1 + 1i, 4 - 2i, 2i, 1 - 3i)
-
-class(complex_vector)
-```
-
-```
-[1] "complex"
-```
---
-
-.w-100.lh-copy[
-You can perform a lot of mathematical analysis with complex data type (`z`) by using some of the following functions:
-]
-
---
-
-.pull-left[
-`Re(z)` - real part of a complex number
-
-`Im(z)` - imaginary part of a complex number
-
-`Mod(z)` - modulus of a complex number
-]
-
---
-
-.pull-right[
-`Arg(z)` - argument of a complex number
-
-`Conj(z)` - conjugate of a complex number
-]
-
----
 layout: false
 
 ### A factor vector
@@ -1761,7 +1742,7 @@ How can you correct it?
 .w-100.lh-copy[
 To select elements of a vector (and later matrices, data frames), you will use square brackets `[ ]` and between the square brackets, you indicate the index of elements to select.
 
-R index starts with `\(1\)`, for example:
+R index starts at `\(1\)`, for example:
 ]
 
 &lt;table&gt;
@@ -1791,11 +1772,22 @@ R index starts with `\(1\)`, for example:
 &lt;/tbody&gt;
 &lt;/table&gt;
 .w-100.lh-copy[
-To access the first element of a vector `week_day`, you type `week_day[1]` and for second element, you typed `week_day[2]`.
+To access the first element of a vector  `week_day`, you will use: 
+
+
+```r
+week_day[1]
+```
+and for second element, use:
+
+
+```r
+week_day[2]
+```
 ]
 ---
 
-### Example
+### Examples
 
 
 ```r
@@ -1812,23 +1804,23 @@ week_day[1]
 ```
 
 ```r
-week_day[2]
+week_day[4]
 ```
 
 ```
-[1] "Tuesday"
+[1] "Thursday"
 ```
 --
 
 ### Exercise
 
-How can we access `Monday` and `Thursday` from the vector, `week_day`?
+How can we access both `Monday` and `Thursday` from the vector, `week_day`?
 
 .can-edit[
  
 ]
 
-<div class="countdown" id="timer_60ea13f2" style="right:0;bottom:0;" data-warnwhen="0">
+<div class="countdown" id="timer_6276ad5b" style="right:0;bottom:0;" data-warnwhen="0">
 <code class="countdown-time"><span class="countdown-digits minutes">02</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 
@@ -1861,7 +1853,7 @@ Data relating to the marks of 13 students in the Introduction to R quiz are givi
  
 ]
 
-<div class="countdown" id="timer_60ea13c2" style="right:0;bottom:0;" data-warnwhen="0">
+<div class="countdown" id="timer_6276ab74" style="right:0;bottom:0;" data-warnwhen="0">
 <code class="countdown-time"><span class="countdown-digits minutes">02</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 
@@ -1876,11 +1868,134 @@ marks &lt;- c(10, 15, 10, 9, 18, 16, 14, 12, 16, 13, 15, 20, 17)
 marks[marks &gt; 13]
 ```
 
-<div class="countdown" id="timer_60ea1239" style="right:0;bottom:0;" data-warnwhen="0">
+<div class="countdown" id="timer_6276aeb6" style="right:0;bottom:0;" data-warnwhen="0">
 <code class="countdown-time"><span class="countdown-digits minutes">01</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 
 ---
+layout: true
+
+## How to find the index of elements in a vector
+
+---
+
+.w-100.lh-copy[
+Every element in the vector has a particular position or index. It is possible to know the index of any element using built-in functions in R like `which()`, and `match()`.
+]
+
+--
+
+.w-100.lh-copy[
+
+**The `which()` function**
+
+The `which()` function returns a vector with the index (or indexes) of the element which matches the logical vector.
+]
+
+--
+
+**Example 1**
+
+What is the index of "New Jersey" in the vector `state`?
+
+
+```r
+state_name &lt;- c("South Carolina", "Minnesota", "Michigan", "New York",  
+"Arizona", "Texas", "New Jersey", "Rhode Island", "Massachusetts", "Delaware", "Arizona")
+
+which(state_name == "New Jersey")
+```
+
+```
+[1] 7
+```
+
+
+---
+
+.w-100.lh-copy[
+We can also use the `which()` function to find the indexes of multiple elements using the `%in%` parameter, which returns a vector with a `TRUE` value for every element that matches.
+]
+
+--
+
+**Example 2**
+
+What are the indexes of the following elements:
+
+.pull-left[
+- South Carolina  
+- Texas
+]
+
+.pull-right[
+- Massachusetts
+- Arizona
+]
+
+in the vector `state_name`?
+
+--
+
+
+```r
+which(state_name %in% c("South Carolina", "Texas", "Massachusetts",
+                   "Arizona"))
+```
+
+```
+[1]  1  5  6  9 11
+```
+
+
+---
+.w-100.lh-copy[
+
+**The `match` function**
+
+The `match()` function is very similar to the `which()` function. It returns a vector with the first index (if the element is at more than one position) of the element and is considered faster than the `which()` function.
+]
+
+--
+
+**Example 1**
+
+
+```r
+state_abbrev &lt;-  c("DE","MA", "AZ", "MI", "MN", "NJ", "AZ", "NY", 
+                   "RI",  "SC", "TX")
+
+match("AZ", state_abbrev)
+```
+
+```
+[1] 3
+```
+
+---
+
+.w-100.lh-copy[
+We can also use it for finding the first index of multiple elements, as shown below:
+
+
+```r
+state_abbrev &lt;-  c("DE","MA", "AZ", "MI", "MN", "NJ", "AZ", "NY", 
+                   "RI",  "SC", "TX", "DE")
+
+match(c("AZ", "DE"), state_abbrev)
+```
+
+```
+[1] 3 1
+```
+
+
+Note that only the first positions of both "AZ" and "DE" are returned by the `match()` function. That is why the `match()` is considered to be faster of the two methods for such situations where only the first index is required.
+]
+
+---
+layout: false
+
 ## Special vectors 
 
 --
@@ -2084,7 +2199,7 @@ rep(1:4, 1:4)
 rep(1:4, c(4, 1, 8, 2))
 ```
 
-<div class="countdown" id="timer_60ea12ce" style="right:0;bottom:0;" data-warnwhen="0">
+<div class="countdown" id="timer_6276acbc" style="right:0;bottom:0;" data-warnwhen="0">
 <code class="countdown-time"><span class="countdown-digits minutes">02</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 ---
@@ -2125,7 +2240,7 @@ sample(x = fruit, size = 4)
 ```
 
 ```
-[1] "Cherry" "Banana" "Pawpaw" "Orange"
+[1] "Orange"     "Pineapples" "Cherry"     "Pawpaw"    
 ```
 --
 
@@ -2139,7 +2254,7 @@ sample(x = fruit, size = 4)
 ```
 
 ```
-[1] "Pineapples" "Cherry"     "Orange"     "Banana"    
+[1] "Pawpaw" "Apple"  "Banana" "Cherry"
 ```
 ---
 
@@ -2231,7 +2346,7 @@ Use R to draw 10 random coins from the chest.
 
 ]
 
-<div class="countdown" id="timer_60ea13ba" style="right:0;bottom:0;" data-warnwhen="0">
+<div class="countdown" id="timer_6276acde" style="right:0;bottom:0;" data-warnwhen="0">
 <code class="countdown-time"><span class="countdown-digits minutes">02</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 ---
@@ -2314,7 +2429,7 @@ poisson_data
 hist(poisson_data)
 ```
 
-![](slide-script_files/figure-html/unnamed-chunk-120-1.png)&lt;!-- --&gt;
+![](slide-script_files/figure-html/unnamed-chunk-125-1.png)&lt;!-- --&gt;
 
 ---
 
@@ -2373,7 +2488,7 @@ normal_data
 hist(normal_data)
 ```
 
-![](slide-script_files/figure-html/unnamed-chunk-122-1.png)&lt;!-- --&gt;
+![](slide-script_files/figure-html/unnamed-chunk-127-1.png)&lt;!-- --&gt;
 
 ---
 layout: false
@@ -2403,7 +2518,7 @@ layout: false
    
    Generate 50 observations for both `height` and `weight`.
   
-  <div class="countdown" id="timer_60ea11e6" style="right:0;bottom:0;" data-warnwhen="60">
+  <div class="countdown" id="timer_6276abe3" style="right:0;bottom:0;" data-warnwhen="60">
 <code class="countdown-time"><span class="countdown-digits minutes">05</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 
@@ -2527,7 +2642,7 @@ Create the matrix `A` with R:
 ]
 
 
-<div class="countdown" id="timer_60ea122d" style="right:0;bottom:0;" data-warnwhen="0">
+<div class="countdown" id="timer_6276abd2" style="right:0;bottom:0;" data-warnwhen="0">
 <code class="countdown-time"><span class="countdown-digits minutes">01</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 
@@ -2657,7 +2772,7 @@ How would you select the following matrices from A?
 ]
 
 
-<div class="countdown" id="timer_60ea110b" style="right:0;bottom:0;" data-warnwhen="0">
+<div class="countdown" id="timer_6276ae1a" style="right:0;bottom:0;" data-warnwhen="0">
 <code class="countdown-time"><span class="countdown-digits minutes">03</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 
@@ -2926,7 +3041,7 @@ Create a data frame for the following data:
 7   &lt;NA&gt;     NA    100
 ```
 
-<div class="countdown" id="timer_60ea127f" style="right:0;bottom:0;" data-warnwhen="0">
+<div class="countdown" id="timer_6276adbf" style="right:0;bottom:0;" data-warnwhen="0">
 <code class="countdown-time"><span class="countdown-digits minutes">02</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 .can-edit[
@@ -3112,7 +3227,7 @@ str(medical_data)
 
 ```
 'data.frame':	120 obs. of  4 variables:
- $ gender: Factor w/ 2 levels "Female","Male": 2 1 1 1 2 1 1 1 1 1 ...
+ $ gender: chr  "Male" "Female" "Female" "Female" ...
  $ height: num  3 2 3 2 3 2 3 3 2 2 ...
  $ weight: num  47 46 58 64 62 53 69 58 58 57 ...
  $ bmi   : num  5.22 11.5 6.44 16 6.89 ...
@@ -3172,13 +3287,13 @@ summary(medical_data)
 ```
 
 ```
-    gender       height          weight           bmi        
- Female:61   Min.   :1.000   Min.   :37.00   Min.   : 2.375  
- Male  :59   1st Qu.:2.000   1st Qu.:50.00   1st Qu.: 6.333  
-             Median :2.000   Median :56.00   Median :11.000  
-             Mean   :2.433   Mean   :55.58   Mean   :12.384  
-             3rd Qu.:3.000   3rd Qu.:62.00   3rd Qu.:14.312  
-             Max.   :4.000   Max.   :78.00   Max.   :63.000  
+    gender              height          weight           bmi        
+ Length:120         Min.   :1.000   Min.   :37.00   Min.   : 2.375  
+ Class :character   1st Qu.:2.000   1st Qu.:50.00   1st Qu.: 6.333  
+ Mode  :character   Median :2.000   Median :56.00   Median :11.000  
+                    Mean   :2.433   Mean   :55.58   Mean   :12.384  
+                    3rd Qu.:3.000   3rd Qu.:62.00   3rd Qu.:14.312  
+                    Max.   :4.000   Max.   :78.00   Max.   :63.000  
 ```
 --
 
@@ -4366,7 +4481,7 @@ How would you extract the component `iris_data` from the `list_example`?
 ]
 
 
-<div class="countdown" id="timer_60ea14cc" style="right:0;bottom:0;" data-warnwhen="0">
+<div class="countdown" id="timer_6276acb6" style="right:0;bottom:0;" data-warnwhen="0">
 <code class="countdown-time"><span class="countdown-digits minutes">01</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 
@@ -4709,7 +4824,7 @@ Use your function to convert the following `Celsius` to `Fahrenheit`:
 -	120
 
 
-<div class="countdown" id="timer_60ea13a0" style="right:0;bottom:0;" data-warnwhen="0">
+<div class="countdown" id="timer_6276aea5" style="right:0;bottom:0;" data-warnwhen="0">
 <code class="countdown-time"><span class="countdown-digits minutes">03</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 
@@ -4752,7 +4867,7 @@ Use your function, `pythagoras`, to get a hypotenuse side for the following tria
 -	`a = 3`, `b = 4`
 ]
 
-<div class="countdown" id="timer_60ea114e" style="right:0;bottom:0;" data-warnwhen="0">
+<div class="countdown" id="timer_6276ad15" style="right:0;bottom:0;" data-warnwhen="0">
 <code class="countdown-time"><span class="countdown-digits minutes">03</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 

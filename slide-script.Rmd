@@ -90,7 +90,7 @@ class: middle
 
 Goal:
 
-> The goal of this R workshop is to help you learn the most important skills in R for data science.
+> The goal of this R session is to help you learn the most important skills in R for data science.
 
 
 ]
@@ -191,6 +191,27 @@ include_graphics("images/learnr.png")
 ```
 
 ---
+
+# LearnR, UseR, and ThinkR
+
+```{r, echo= FALSE, out.width= "100%", out.height= "100%"}
+knitr::include_graphics('images/Company_useR.png')
+```
+
+[Companies](https://www.quora.com/Which-companies-use-R) that use R for Analytics
+
+---
+# R Learning Curve
+
+.w-100.lh-copy[
+As many have said, R makes hard things easy. The learning curve for R is pretty steep for a beginner. Though R is a bit difficult in the beginning, data science enthusiasts still prefer to learn it due to the amazing features of R.
+]
+
+```{r, echo= FALSE, out.width= "85%", out.height= "85%"}
+knitr::include_graphics('images/R_learning_curve.png')
+```
+
+---
 background-image:url(images/R.PNG)
 background-size: contain
 class: center, bottom
@@ -243,6 +264,7 @@ Download R for Mac via this [link](https://cran.r-project.org/bin/macosx/). Plea
 - Open the `.pkg` file and install it.
 
 **For Linux**:
+
 For complete R System installation in Linux, follow the instructions on this
 [link](https://cran.r-project.org/).
 
@@ -253,21 +275,10 @@ For Ubuntu with Apt-get installed, execute `sudo apt-get install r-base` in the 
 .panel[.panel-name[Install RStudio]
 
 .w-100.lh-copy[
-You can install **RStudio** via this [link](https://cran.r-project.org/), choose the appropriate installer file for your operating system, download it, and then run it to install **RStudio**.
+You can install RStudio via this [link](https://www.rstudio.com/products/rstudio/download/#download), choose the appropriate installer file for your operating system, download it, and then run it to install RStudio.
 ]
 ]
 ]
-
----
-# LearnR, UseR, and ThinkR
-
-```{r, echo= FALSE, out.width= "100%", out.height= "100%"}
-knitr::include_graphics('images/Company_useR.png')
-```
-
-[Companies](https://www.quora.com/Which-companies-use-R) that use R for Analytics
-
-
 
 ---
 
@@ -288,6 +299,7 @@ Data science is an exciting discipline that allows you to turn raw data into und
 ```{r, echo=FALSE, out.width = "100%",fig.cap= "Data Science Phases~Inspired by Hadley"}
 include_graphics("images/r4ds.JPG")
 ```
+
 
 --
 
@@ -336,14 +348,17 @@ to navigate through the four windows in Rstudio, use R as a calculator and  assi
 ![](https://media3.giphy.com/media/26h0poAzDM5h8gHWE/giphy.gif)  
 
 ---
+
 ## The four panes of RStudio
 
-```{r, echo=FALSE}
+```{r, echo=FALSE, out.height= "85%", out.width= "90%"}
 include_graphics("images/RStudio.png")
 ```
+
 --
 
 **Let's open our RStudio!**
+
 ---
 
 class: center, middle, inverse
@@ -366,6 +381,7 @@ following arithmetic operations:
 
 --
 
+.pull-left[
 - Addition (`+`)
 
 - Subtraction (`-`)
@@ -373,12 +389,18 @@ following arithmetic operations:
 - Multiplication (`*`)
 
 - Division (`/`)
+]
+
+--
+
+.pull-right[
 
 - Exponentiation (`^`)
 
 - Modulo (`%%`)
 
 - Parenthesis `()`
+]
 
 ---
 
@@ -724,12 +746,20 @@ class(3-6i)
 
 .w-100.lh-copy[
 A variable allows you to store a value (e.g. 5) or an object (e.g. a function
-description) in `R`. You can then later use this variable’s name to easily access the value or the object that is stored with it. You can create a variable with the help of an **assignment operator** `<-` or `=`. 
+description) in `R`. You can then later use this variable’s name to easily access the value or the object that is stored with it. 
 ]
+
+--
+
+.w-100.lh-copy[
+You can create a variable with the help of an **assignment operator** `<-` or `=`. 
+]
+
+--
+
 
 ### Examples
 
---
 
 .pull-left[
 
@@ -813,7 +843,6 @@ smile_face = TRUE
 
 ]
 
-
 ---
 
 ## Rules for naming variables
@@ -827,11 +856,13 @@ smile_face = TRUE
 * R is case sensitive. Uppercase characters are different from lowercase characters.
 ]
 
+--
+
 ```{r, echo=FALSE}
 
 sample <- tibble::tribble(
   ~`Samples of acceptable variable names`, ~`Samples of unacceptable variable names`,
-  "test.grade", "test(grade)",
+  "health.status", "health(status)",
   "covid_19_cases", "covid-19-cases",
   "budget2021", "2021budget", "sales_price_2021", "sales price 2021"
 )
@@ -1123,44 +1154,6 @@ class(month)
 
 ```
 ---
-
-```{r}
-diabetic_status <- c(TRUE, FALSE, FALSE, TRUE, FALSE, TRUE)
-
-class(diabetic_status)
-```
---
-
-```{r}
-complex_vector <- c(2+1i, 3-2i, 1+1i, 4 - 2i, 2i, 1-3i)
-
-class(complex_vector)
-```
---
-
-.w-100.lh-copy[
-You can perform a lot of mathematical analysis with complex data type (`z`) by using some of the following functions:
-]
-
---
-
-.pull-left[
-`Re(z)` - real part of a complex number
-
-`Im(z)` - imaginary part of a complex number
-
-`Mod(z)` - modulus of a complex number
-]
-
---
-
-.pull-right[
-`Arg(z)` - argument of a complex number
-
-`Conj(z)` - conjugate of a complex number
-]
-
----
 layout: false
 
 ### A factor vector
@@ -1306,7 +1299,7 @@ How can you correct it?
 .w-100.lh-copy[
 To select elements of a vector (and later matrices, data frames), you will use square brackets `[ ]` and between the square brackets, you indicate the index of elements to select.
 
-R index starts with $1$, for example:
+R index starts at $1$, for example:
 ]
 
 ```{r, echo= F}
@@ -1325,11 +1318,20 @@ dd <-  data.frame(
 dd %>% kableExtra::kable(format = "html", align = "c")
 ```
 .w-100.lh-copy[
-To access the first element of a vector `week_day`, you type `week_day[1]` and for second element, you typed `week_day[2]`.
+To access the first element of a vector  `week_day`, you will use: 
+
+```{r, eval=FALSE}
+week_day[1]
+```
+and for second element, use:
+
+```{r, eval=FALSE}
+week_day[2]
+```
 ]
 ---
 
-### Example
+### Examples
 
 ```{r}
 week_day <- c("Monday", "Tuesday", "Wednessday", "Thursday", "Friday", "Saturday", "Sunday")
@@ -1338,13 +1340,13 @@ week_day <- c("Monday", "Tuesday", "Wednessday", "Thursday", "Friday", "Saturday
 ```{r}
 week_day[1]
 
-week_day[2]
+week_day[4]
 ```
 --
 
 ### Exercise
 
-How can we access `Monday` and `Thursday` from the vector, `week_day`?
+How can we access both `Monday` and `Thursday` from the vector, `week_day`?
 
 .can-edit[
  
@@ -1402,6 +1404,109 @@ countdown(minutes = 1, seconds = 00, bottom  = 0)
 ```
 
 ---
+layout: true
+
+## How to find the index of elements in a vector
+
+---
+
+.w-100.lh-copy[
+Every element in the vector has a particular position or index. It is possible to know the index of any element using built-in functions in R like `which()`, and `match()`.
+]
+
+--
+
+.w-100.lh-copy[
+
+**The `which()` function**
+
+The `which()` function returns a vector with the index (or indexes) of the element which matches the logical vector.
+]
+
+--
+
+**Example 1**
+
+What is the index of "New Jersey" in the vector `state`?
+
+```{r, tidy=FALSE}
+state_name <- c("South Carolina", "Minnesota", "Michigan", "New York",  
+"Arizona", "Texas", "New Jersey", "Rhode Island", "Massachusetts", "Delaware", "Arizona")
+
+which(state_name == "New Jersey")
+```
+
+
+---
+
+.w-100.lh-copy[
+We can also use the `which()` function to find the indexes of multiple elements using the `%in%` parameter, which returns a vector with a `TRUE` value for every element that matches.
+]
+
+--
+
+**Example 2**
+
+What are the indexes of the following elements:
+
+.pull-left[
+- South Carolina  
+- Texas
+]
+
+.pull-right[
+- Massachusetts
+- Arizona
+]
+
+in the vector `state_name`?
+
+--
+
+```{r, tidy=FALSE}
+which(state_name %in% c("South Carolina", "Texas", "Massachusetts",
+                   "Arizona"))
+```
+
+
+---
+.w-100.lh-copy[
+
+**The `match` function**
+
+The `match()` function is very similar to the `which()` function. It returns a vector with the first index (if the element is at more than one position) of the element and is considered faster than the `which()` function.
+]
+
+--
+
+**Example 1**
+
+```{r, tidy=FALSE}
+state_abbrev <-  c("DE","MA", "AZ", "MI", "MN", "NJ", "AZ", "NY", 
+                   "RI",  "SC", "TX")
+
+match("AZ", state_abbrev)
+```
+
+---
+
+.w-100.lh-copy[
+We can also use it for finding the first index of multiple elements, as shown below:
+
+```{r, tidy=FALSE}
+state_abbrev <-  c("DE","MA", "AZ", "MI", "MN", "NJ", "AZ", "NY", 
+                   "RI",  "SC", "TX", "DE")
+
+match(c("AZ", "DE"), state_abbrev)
+```
+
+
+Note that only the first positions of both "AZ" and "DE" are returned by the `match()` function. That is why the `match()` is considered to be faster of the two methods for such situations where only the first index is required.
+]
+
+---
+layout: false
+
 ## Special vectors 
 
 --
